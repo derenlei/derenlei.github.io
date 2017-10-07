@@ -1,2 +1,3 @@
-	name: Deren Lei's Page
-	markdown: kramdown
+name: Deren Lei's Page
+markdown: kramdown
+permalink: /blog/:year/:month/:day/:title
