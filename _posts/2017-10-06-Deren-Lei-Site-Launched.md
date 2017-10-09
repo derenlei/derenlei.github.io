@@ -1,5 +1,6 @@
 ---
 layout: post
+comments: true
 title: "Deren Lei Launches Site"
 date: 2017-10-06
 ---
