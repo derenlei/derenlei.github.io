@@ -1,9 +1,20 @@
 <!DOCTYPE html>
 	<html>
 		<head>
+			{% if site.enforce_ssl %}
+			<!--
+			 redirect users to the https version of the website.
+			 but: only check when on the production domain, as set in _config.yml.
+			-->
 			<title>{{ page.title }}</title>
 			<!-- link to main stylesheet -->
 			<link rel="stylesheet" type="text/css" href="/css/main.css">
+			<script type="text/javascript">
+				var enforce = "{{ site.enforce_ssl }}";
+				window.location = window.location.toString().replace(/^http:/, "https:");
+			</script>
+			{% endif %}
+			
 			{% include analytics.html %}
 			{% seo %}
 		</head>
