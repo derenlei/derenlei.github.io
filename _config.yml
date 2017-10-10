@@ -1,7 +1,6 @@
 name: Deren Lei's Page
 markdown: kramdown
 permalink: /blog/:year/:month/:day/:title
-enforce_ssl:derenlei.com
 plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
