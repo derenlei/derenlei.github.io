@@ -31,4 +31,20 @@ ul.posts li { list-style: none; }
 .resume h2 { font-size: 2em; }
 .resume address, .resume .download { font-family: 'Helvetica', 'Arial', 'Sans-Serif'; }
 .resume address, .resume p { font-size: 1.2em; }
-.resume .download { float: right; font-size: .8em; text-transform: uppercase; }
+.resume .download { float: right; font-size: .8em; text-transform: uppercase;
+     width: fit-content; 
+    border: 1.5px solid;
+    word-wrap: initial;
+    -moz-border-bottom-left-radius: 5px;
+  	-webkit-border-bottom-left-radius: 5px;
+  	border-bottom-left-radius: 5px;
+  	-moz-border-bottom-right-radius: 5px;
+  	-webkit-border-bottom-right-radius: 5px;
+  	border-bottom-right-radius: 5px;
+  	-moz-border-top-right-radius: 5px;
+  	-webkit-border-top-right-radius: 5px;
+  	border-top-right-radius: 5px;
+      -moz-border-top-left-radius: 5px;
+  	-webkit-border-top-left-radius: 5px;
+  	border-top-left-radius: 5px;     
+}
