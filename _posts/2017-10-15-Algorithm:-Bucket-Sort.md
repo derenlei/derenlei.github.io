@@ -95,9 +95,9 @@ E[X^{2}] = \mu^{2} + Var(X)
 
 This is easy to see from the definition of the variance since   
 \begin{equation}
-E[X^{2}] = E[(X - \mu)^{2}]\newline
-= E[X^{2} -2X\mu + \mu^{2}]\newline
-= E[X^{2}] -2E[X]\mu + \mu^{2}\newline
+E[X^{2}] = E[(X - \mu)^{2}]
+= E[X^{2} -2X\mu + \mu^{2}]
+= E[X^{2}] -2E[X]\mu + \mu^{2}
 = E[X^{2}] - \mu^{2}
 \end{equation}
 
@@ -123,10 +123,10 @@ E[N_{i}^{2}] = 2 - \frac{1}{n - 2}
 
 Substituting \eqref{6} into \eqref{2} we have
 \begin{equation}
-E[T(n)] = c\sum_{i=1}^{n-2}(2 - \frac{1}{n - 2})\\   
-= 2cn - 5c\\   
-= O(n) - O(1)\\   
-= O(n)\\   
+E[T(n)] = c\sum_{i=1}^{n-2}(2 - \frac{1}{n - 2})  
+= 2cn - 5c  
+= O(n) - O(1)  
+= O(n)   
 \end{equation}
 
 Therefore, for points uniformly distributed in the unit interval, algorithm bucket sort runs in linear expected time.
