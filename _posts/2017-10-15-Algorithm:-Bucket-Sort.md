@@ -97,16 +97,25 @@ E[X^{2}] = E[(X - \mu)^{2}] \\
 \end{equation}
 
 Furthermore, for a binomial random variable Ni with parameters (n-2) and pi we have that:
-<center>$$\mu = (n - 2)p_{i}$$</center>
-and <center>$$Var(X) = (n - 2)p_{i}(1 - p_{i})$$</center>
+\begin{equation}
+\mu = (n - 2)p_{i}
+\end{equation}
+and   
+\begin{equation}
+Var(X) = (n - 2)p_{i}(1 - p_{i})
+\end{equation}
 
 Substituting them into $$E[X^{2}] = \mu^{2} + Var(X)$$ and using yields
-<center>$$E[N_{i}^{2}] = 2 - \frac{1}{n - 2}$$</center>
+\begin{equation}
+E[N_{i}^{2}] = 2 - \frac{1}{n - 2}
+\end{equation}
 
 Substitute it into $$E[T(n)] = c\sum_{i=1}^{n-2}E[N_{i}^{2}]$$ we have
-<center>$$E[T(n)] = c\sum_{i=1}^{n-2}(2 - \frac{1}{n - 2})$$</center>
-<center>$$= 2cn - 5c$$</center>
-<center>$$= O(n) - O(1)$$</center>
-<center>$$= O(n) $$</center>
+\begin{equation}
+E[T(n)] = c\sum_{i=1}^{n-2}(2 - \frac{1}{n - 2})   
+= 2cn - 5c   
+= O(n) - O(1)   
+= O(n)   
+\end{equation}
 
 Therefore, for points uniformly distributed in the unit interval, algorithm bucket sort runs in linear expected time.
