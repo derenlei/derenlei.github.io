@@ -74,25 +74,25 @@ void bucketSort(float arr[], int n)
 Once \\(X_{min}\\) and \\(X_{max}\\) are found the algorithm processes the remaining n-2 points which are themselves uniformly distributed in [$$X_{min}$$, $$X_{max}$$]. Since we have n-2 buckets it follows that the probability that a remaining point falls in the i-th bucket is pi = 1/(n-2). In other words, the number of points that falls in bucket i is a binomial random variable, denoted by Ni, with parameters (n-2) and pi, i = 1, 2,..., n-2. If we sort each Ni using a quadratic time algorithm the total time taken by bucket sort is given by
 \begin{equation}
 T(n) = X_{1}N_{1}^{2} + X_{2}N_{2}^{2} + ... + X_{n-1}N_{n-2}^{2} = c\sum_{i=1}^{n-2}N_{i}^{2}
-\label{(1)}
+\label{eq:1}
 \end{equation}
 where c is a positive constant.
 
-To find the expected time we need to take the expected value, denoted by E{.}, of \eqref{(1)}
+To find the expected time we need to take the expected value, denoted by E{.}, of \eqref{eq:1}
 \begin{equation}
 E[T(n)] = c\sum_{i=1}^{n-2}E[N_{i}^{2}]
 \end{equation}
 
 Thus we need to know the expected value of the square of a random variable. Now, for any random variable X we have
 \begin{equation}
-{equation}E[X^{2}] = \mu^{2} + Var(X)
+E[X^{2}] = \mu^{2} + Var(X)
 \end{equation}
 
 This is easy to see from the definition of the variance since   
 \begin{equation}
-E[X^{2}] = E[(X - \mu)^{2}] \newline
-= E[X^{2} -2X\mu + \mu^{2}] \newline
-= E[X^{2}] -2E[X]\mu + \mu^{2} \newline
+E[X^{2}] = E[(X - \mu)^{2}] \\
+= E[X^{2} -2X\mu + \mu^{2}] \\
+= E[X^{2}] -2E[X]\mu + \mu^{2} \\
 = E[X^{2}] - \mu^{2}
 \end{equation}
 
