@@ -73,7 +73,7 @@ void bucketSort(float arr[], int n)
 
 # 5. Time Complexity Analysis
 Once $$X_{min}$$ and $$X_{max}$$ are found the algorithm processes the remaining n-2 points which are themselves uniformly distributed in [$$X_{min}$$, $$X_{max}$$]. Since we have n-2 buckets it follows that the probability that a remaining point falls in the i-th bucket is pi = 1/(n-2). In other words, the number of points that falls in bucket i is a binomial random variable, denoted by Ni, with parameters (n-2) and pi, i = 1, 2,..., n-2. If we sort each Ni using a quadratic time algorithm the total time taken by bucket sort is given by
-<center>$$T(n) = X_{1}N_{1}^{2} + X_{2}N_{2}^{2} + ... + X_{n-1}N_{n-2}^{2} = c\sum_{i=1}^{n-2}N_{i}^{2}$$</center>
+<center> $$T(n) = X_{1}N_{1}^{2} + X_{2}N_{2}^{2} + ... + X_{n-1}N_{n-2}^{2} = c\sum_{i=1}^{n-2}N_{i}^{2}$$ </center>
 where c is a positive constant.
 
 To find the expected time we need to take the expected value, denoted by E{.}, of (1)
