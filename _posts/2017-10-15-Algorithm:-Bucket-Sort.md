@@ -82,11 +82,15 @@ where c is a positive constant.
 To find the expected time we need to take the expected value, denoted by E{.}, of \eqref{1}
 \begin{equation}
 E[T(n)] = c\sum_{i=1}^{n-2}E[N_{i}^{2}]
+\tag{2}
+\label{2}
 \end{equation}
 
 Thus we need to know the expected value of the square of a random variable. Now, for any random variable X we have
 \begin{equation}
 E[X^{2}] = \mu^{2} + Var(X)
+\tag{3}
+\label{3}
 \end{equation}
 
 This is easy to see from the definition of the variance since   
@@ -100,18 +104,24 @@ E[X^{2}] = E[(X - \mu)^{2}] \\
 Furthermore, for a binomial random variable Ni with parameters (n-2) and pi we have that:
 \begin{equation}
 \mu = (n - 2)p_{i}
+\tag{4}
+\label{4}
 \end{equation}
 and   
 \begin{equation}
 Var(X) = (n - 2)p_{i}(1 - p_{i})
+\tag{5}
+\label{5}
 \end{equation}
 
-Substituting them into $$E[X^{2}] = \mu^{2} + Var(X)$$ and using yields
+Substituting \eqref{4} and \eqref{5} into \eqref{3} and using $$p_{i} = \frac{1}{n - 2}$$ yields
 \begin{equation}
 E[N_{i}^{2}] = 2 - \frac{1}{n - 2}
+\tag{6}
+\label{6}
 \end{equation}
 
-Substitute it into $$E[T(n)] = c\sum_{i=1}^{n-2}E[N_{i}^{2}]$$ we have
+Substituting \eqref{6} into \eqref{2} we have
 \begin{equation}
 E[T(n)] = c\sum_{i=1}^{n-2}(2 - \frac{1}{n - 2})   
 = 2cn - 5c   
