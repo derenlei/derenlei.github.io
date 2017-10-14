@@ -95,17 +95,17 @@ E[X^{2}] = \mu^{2} + Var(X)
 
 This is easy to see from the definition of the variance since   
 \begin{equation}
-E[X^{2}] = E[(X - \mu)^{2}] \newline
-= E[X^{2} -2X\mu + \mu^{2}] \newline
-= E[X^{2}] -2E[X]\mu + \mu^{2} \newline
+E[X^{2}] = E[(X - \mu)^{2}]\newline
+= E[X^{2} -2X\mu + \mu^{2}]\newline
+= E[X^{2}] -2E[X]\mu + \mu^{2}\newline
 = E[X^{2}] - \mu^{2}
 \end{equation}
 
 Furthermore, for a binomial random variable Ni with parameters (n-2) and pi we have that:
 \begin{equation}
-\mu = (n - 2)p_{i}
-\tag{4}
-\label{4}
+\mu = (n - 2)p_{i}\\
+\tag{4}\\
+\label{4}\\
 \end{equation}
 and   
 \begin{equation}
