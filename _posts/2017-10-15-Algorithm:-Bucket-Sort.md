@@ -5,10 +5,10 @@ title: "Algorithm: Bucket Sort"
 date: 2017-10-15
 ---
 
-## 1. Introduction
+### 1. Introduction
 Given n numbers X1, X2,..., Xn drawn at random independently from the uniform distribution in [0,1], it is desired to sort them in **O(n)** expected time. Our model of computation allows the floor function to be performed in constant time. The following algorithm does the job.
 
-## 2. Algorithm BUCKET-SORT
+### 2. Algorithm BUCKET-SORT
 **Begin**
   - Step 1: Find Xmin and Xmax, the points with minimum and maximum value.
   - Step 2: Divide the interval [Xmin, Xmax] into n-2 “buckets” or intervals of equal length.
@@ -18,33 +18,32 @@ Given n numbers X1, X2,..., Xn drawn at random independently from the uniform di
 
 **End**
 
-## 3. Simple demonstration
-An unsorted array: [6 2 4 1 5 9]
-1. Prepare 10 empty buckets
-[6 2 4 1 5 9]----------------unsorted array
-[0 0 0 0 0 0 0 0 0 0]------empty buckets
-[0 1 2 3 4 5 6 7 8 9]--------index of the bucket
+### 3. Simple demonstration
+An unsorted array: [6 2 4 1 5 9]   
+1. Prepare 10 empty buckets   
+[6 2 4 1 5 9]----------------unsorted array   
+[0 0 0 0 0 0 0 0 0 0]------empty buckets   
+[0 1 2 3 4 5 6 7 8 9]--------index of the bucket   
 
-2. Pick up the frist number from the array which is 6, and put it inside the 6th bucket.
- Empty Bucket[unsorted array[0]] = unsorted array[0]
-[**6** 2 4 1 5 9]----------------unsorted array
-[0 0 0 0 0 0 **6** 0 0 0]------empty buckets
-[0 1 2 3 4 5 **6** 7 8 9]--------index of the bucket
+2. Pick up the frist number from the array which is 6, and put it inside the 6th bucket.   
+Empty Bucket[unsorted array[0]] = unsorted array[0]   
+[**6** 2 4 1 5 9]----------------unsorted array   
+[0 0 0 0 0 0 **6** 0 0 0]------empty buckets   
+[0 1 2 3 4 5 **6** 7 8 9]--------index of the bucket   
 
-3. Get the next number from the unsorted array which is 2, and put it inside the 2nd bucket. The bucket index equals to the number.
-[**6** **2** 4 1 5 9]----------------unsorted array
-[0 0 **2** 0 0 0 6 0 0 0]------empty buckets
-[0 1 **2** 3 4 5 6 7 8 9]--------index of the bucket
+3. Get the next number from the unsorted array which is 2, and put it inside the 2nd bucket. The bucket index equals to the number.   
+[**6** **2** 4 1 5 9]----------------unsorted array   
+[0 0 **2** 0 0 0 6 0 0 0]------empty buckets   
+[0 1 **2** 3 4 5 6 7 8 9]--------index of the bucket   
 
- 
-4. Follow the same step above and put all the number from the unsorted array to the empty buckets like this:
-[**6** **2** **4** **1** **5** **9**]----------------unsorted array
-[0 **1** **2** 0 **4** **5** **6** 0 0 **9**]------empty buckets
-[0 **1** **2** 0 **4** **5** **6** 0 0 **9**]--------index of the bucket
+4. Follow the same step above and put all the number from the unsorted array to the empty buckets like this:   
+[**6** **2** **4** **1** **5** **9**]----------------unsorted array   
+[0 **1** **2** 0 **4** **5** **6** 0 0 **9**]------empty buckets   
+[0 **1** **2** 0 **4** **5** **6** 0 0 **9**]--------index of the bucket   
 
-0 means empty bucket, jump and pick up the numbers in order
+0 means empty bucket, jump and pick up the numbers in order   
 
-## 4. C++ Implementation
+### 4. C++ Implementation
 ```sh
 // Function to sort arr[] of size n using bucket sort
 void bucketSort(float arr[], int n)
@@ -71,7 +70,7 @@ void bucketSort(float arr[], int n)
 }
 ```
 
-## 5. Time Complexity Analysis
+### 5. Time Complexity Analysis
 Once \\(X_{min}\\) and \\(X_{max}\\) are found the algorithm processes the remaining n-2 points which are themselves uniformly distributed in [$$X_{min}$$, $$X_{max}$$]. Since we have n-2 buckets it follows that the probability that a remaining point falls in the i-th bucket is pi = 1/(n-2). In other words, the number of points that falls in bucket i is a binomial random variable, denoted by Ni, with parameters (n-2) and pi, i = 1, 2,..., n-2. If we sort each Ni using a quadratic time algorithm the total time taken by bucket sort is given by
 <center> $$T(n) = X_{1}N_{1}^{2} + X_{2}N_{2}^{2} + ... + X_{n-1}N_{n-2}^{2} = c\sum_{i=1}^{n-2}N_{i}^{2}$$ </center>
 where c is a positive constant.
