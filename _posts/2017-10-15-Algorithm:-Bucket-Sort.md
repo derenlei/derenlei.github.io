@@ -95,9 +95,9 @@ E[X^{2}] = \mu^{2} + Var(X)
 
 This is easy to see from the definition of the variance since   
 \begin{equation}
-E[X^{2}] = E[(X - \mu)^{2}] \\
-= E[X^{2} -2X\mu + \mu^{2}] \\
-= E[X^{2}] -2E[X]\mu + \mu^{2} \\
+E[X^{2}] = E[(X - \mu)^{2}] \newline
+= E[X^{2} -2X\mu + \mu^{2}] \newline
+= E[X^{2}] -2E[X]\mu + \mu^{2} \newline
 = E[X^{2}] - \mu^{2}
 \end{equation}
 
