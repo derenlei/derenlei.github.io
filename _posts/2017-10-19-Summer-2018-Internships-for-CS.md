@@ -1,5 +1,4 @@
 ---
-layout: post
 comments: true
 title: "Summer 2018 Internships for BS/MS Students in Computer Science Major"
 date: 2017-10-19
@@ -27,21 +26,13 @@ date: 2017-10-19
 19. [weebly](#weebly)
 20. [appfolio](#appfolio)
 
-|  |  |
-| ------ | ------ |
-| Dropbox | [plugins/dropbox/README.md] [PlDb] |
-| Github | [plugins/github/README.md] [PlGh] |
-| Google Drive | [plugins/googledrive/README.md] [PlGd] |
-| OneDrive | [plugins/onedrive/README.md] [PlOd] |
-| Medium | [plugins/medium/README.md] [PlMe] |
-| Google Analytics | [plugins/googleanalytics/README.md] [PlGa] |
 
 #### [Microsoft](https://careers.microsoft.com/students/internships)
-- **Explore Program** (freshmen and sophomores only)
-- **Development (engineering)**
-  - **Program manager**
-    - A bachelor's, master's, or doctorate degree in engineering, computer science or related field (pursuing with at least       one semester/quarter remaining after internship).
-    - A year or two of experience programming in C++, Java or other computer programming languages preferred.
+- **Explore Program** (freshmen and sophomores only)    
+- **Development (engineering)**    
+  - **Program manager**    
+    - A bachelor's, master's, or doctorate degree in engineering, computer science or related field (pursuing with at least one semester/quarter remaining after internship).  
+    - A year or two of experience programming in C++, Java or other computer programming languages preferred.    
     - A year or two of experience in C/C++/C#/VB.NET and experience designing and developing tool architecture preferred.
     - Familiarity with managing complex project schedules, solving complex problems and nurturing cross-group collaboration.
     - Strong technical prowess, including understanding of algorithms, systems architecture and end-user experience.
@@ -49,7 +40,7 @@ date: 2017-10-19
     - Demonstrated skill in estimating development time.
     - Demonstrated skills in negotiation and conflict management.
   - **Software engineer**
-    - A bachelor's, master's or doctorate degree in engineering, computer science or related field (pursuing with at least        one semester/quarter remaining after internship).
+    - A bachelor's, master's or doctorate degree in engineering, computer science or related field (pursuing with at least one semester/quarter remaining after internship).
     - A year or two of experience programming in C++, Java or other computer programming languages preferred.
     - A year or two of experience in C/C++/C#/VB.NET and experience designing and developing tool architecture preferred.
     - Strong technical prowess, including understanding of algorithms, systems architecture and end-user experience.
@@ -67,17 +58,17 @@ date: 2017-10-19
         - Strong interpersonal and communications skills.
 #### [Faceboook]( https://www.facebook.com/careers/university/)
 (You can only aplly for three positions)
- - **Facebook University**
-    - **Engineering**
+ - **Facebook University**    
+    - **Engineering**    
         - Current first year (Class of 2021) or second year (Class of 2020) college student studying at a four-year university (or equivalent program for special cases) in the U.S.
         - Knowledge of at least one programming language (ie: C/C++, Javascript, Java, PHP, Ruby, Python, Lua, etc)
-    - **Analytics**
+    - **Analytics**    
         - Current sophomore (just completed freshmen year - class of 2020) enrolled in a four-year BA/BS program (or equivalent program for special cases) at a university within the U.S.
         - Willingness to learn SQL or other programming language (Python, Java, and/or C++)
         - Some exposure (academic, work, or personal) to a programming or scripting language (PHP, Perl, Python, etc.)
 
   - **Engineering, Tech & Design** ( Many positions, only list a few)
-    - **Software Engineer**
+    - **Software Engineer**    
         - Pursuing a degree (Bachelors or Masters) in Computer Science or a related field
         - Must be currently enrolled in a full-time degree program and returning to the program after the completion of the internship
         - Experience in C++, Java, Perl, PHP, or Python
