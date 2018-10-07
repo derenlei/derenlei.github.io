@@ -1,6 +1,0 @@
-name: Deren Lei's Page
-markdown: kramdown
-permalink: /blog/:year/:month/:day/:title
-plugins:
-  - jekyll-sitemap
-  - jekyll-seo-tag
