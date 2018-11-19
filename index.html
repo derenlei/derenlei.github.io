@@ -68,7 +68,7 @@
 						<!--li><a href="#" data-nav-section="skills">Skills</a></li-->
 						<li><a href="#" data-nav-section="education">Education</a></li>
 						<li><a href="#" data-nav-section="experience">Research</a></li>
-						<li><a href="#" data-nav-section="work">Work</a></li>
+						<!--li><a href="#" data-nav-section="work">Work</a></li-->
 					</ul>
 				</div>
 			</nav>
@@ -101,7 +101,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 						   					<h1>Hi! <br>I'm Deren</h1>
 						   					<!--h2>100% html5 bootstrap templates Made by <a href="https://colorlib.com/" target="_blank">colorlib.com</a></h2-->
 												<p><a class="btn btn-primary btn-learn" href="files/Deren_Lei_resume.pdf"><b>Download Resume </b><i class="icon-download4"></i></a></p>
-												<p><a class="btn btn-primary btn-learn" href="files/transcript.pdf"><b>Download Transcript </b><i class="icon-download4"></i></a></p>
+												<!--p><a class="btn btn-primary btn-learn" href="files/transcript.pdf"><b>Download Transcript </b><i class="icon-download4"></i></a></p-->
 											</div>
 					   				</div>
 					   			</div>
@@ -123,8 +123,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 										<span class="heading-meta">About Me</span>
 										<h2 class="colorlib-heading">Who Am I?</h2>
 										<p><strong>Hi I'm Deren Lei.</strong> I'm a senior undergraduate student at UC Santa Barbara majoring computer science and minoring statistical science in College of Engineering honor's program.
-										I have completed majority of the degree requirments and now focusing on building my math and stats skills by taking graduate level courses. My area of interests are: machine learning, reinforcement learning, Natural Language Processing
-									and its intersection with computer vision.</p>
+										I have completed majority of the degree requirments and now focusing on building my math and stats skills by taking graduate level courses. My area of interests are: Deep Learning, Reinforcement Learning, Natural Language Processing
+									and its intersection with Computer Vision.</p>
 										<p>I'm currenly a active researcher at UCSB Natural Language Processing Lab, while seeking for graduate programs to continue my study and research. My goal is to apply my AI skills in industry.</p>
 									</div>
 								</div>
@@ -333,50 +333,68 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 					<div class="row">
 						<div class="col-md-12">
 				         <div class="timeline-centered">
-					         <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
+
+									 <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
+											<div class="timeline-entry-inner">
+												 <div class="timeline-icon color-1">
+														<i class="icon-pen2"></i>
+												 </div>
+												 <div class="timeline-label">
+													<h2><a href="#">Stabilized Deep Reinforcement Learning for Dialogue</a> </br>
+														<!--span>Fall 2017</span--></h2>
+														<p>Deep reinforcement learning in NLP have problems of high variance predictions and sparse reward signals. Google’s
+															recently released BERT can be a good language modeling prior and solve the above issues.</p>
+												 </div>
+											</div>
+									 </article>
+
+					         <article class="timeline-entry animate-box" data-animate-effect="fadeInRight">
 					            <div class="timeline-entry-inner">
 
-					               <div class="timeline-icon color-1">
+					               <div class="timeline-icon color-2">
 					                  <i class="icon-pen2"></i>
 					               </div>
 
 					               <div class="timeline-label">
-					                  <h2><a href="#">Multimodal headline generation </br>(Work in progress)</a> </br><span>Fall 2018</span></h2>
-					                  <p>Currently doing data collection from CNN/Daily Mail: headline, story highlights, article, images. Will submit this year.</p>
+					                  <h2><a href="#">Solving Information Inconsistency</a> </br><!--span>Fall 2018</span--></h2>
+					                  <p>Recent entity typing tasks move to more diverse and fine-grained datasets and current learning approaches have
+															contradiction predictions. Improved performances by avoiding inconsistency outputs using attentions.</p>
 					               </div>
 					            </div>
 					         </article>
 
-
-					         <article class="timeline-entry animate-box" data-animate-effect="fadeInRight">
-					            <div class="timeline-entry-inner">
-					               <div class="timeline-icon color-2">
-					                  <i class="icon-pen2"></i>
-					               </div>
-												 <div class="timeline-label">
-					               	<h2><a href="#">Implicit regularization of stochastic gradient descent in NLP </br>(First author, in submission)</a> </br>
-														<span>Summer 2018</span></h2>
-					                  <p>Studied the implicit regularization of stochastic gradient descent in practical deep learning systems and its correlation
-															with explicit techniques. Results can directly contribute to future NLP studies by helping researchers measure models
-															performances better</p>
-					               </div>
-					            </div>
-					         </article>
-
-					         <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
+									 <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
 					            <div class="timeline-entry-inner">
 					               <div class="timeline-icon color-3">
 					                  <i class="icon-pen2"></i>
 					               </div>
 					               <div class="timeline-label">
-					               	<h2><a href="#">Natural language instruction learning for intelligent agents</a> </br>
-														<span>Fall 2017</span></h2>
-					                  <p>Assist PhD researchers for their engineering problems when get into NLP area. Solved open-source project issues. Did
-								model hyperparameter optimization. Simultaneously learnt deep learning model implementation via Tensorflow and
-								PyTorch and participated in weekly NLP group reading.</p>
+					               	<h2><a href="#">Multimodal Headline Generation</a> </br>
+														<!--span>Fall 2017</span--></h2>
+					                  <p>Helping AI powered news content platform company generate attractive smartphone notifications based on contents.
+															Did data collection from CNN news: headline, story highlights, article, images, categories, etc to help our model
+															generates headline via different resources. Our dataset support multiple NLP tasks testing: 1) article classification. 2)
+															headline generation. 3) abstractive summarization.</p>
 					               </div>
 					            </div>
 					         </article>
+
+					         <article class="timeline-entry animate-box" data-animate-effect="fadeInRight">
+					            <div class="timeline-entry-inner">
+					               <div class="timeline-icon color-4">
+					                  <i class="icon-pen2"></i>
+					               </div>
+												 <div class="timeline-label">
+					               	<h2><a href="#">Implicit Regularization of SGD in NLP </br>(First author, in submission)</a> </br>
+														<!--span>Summer 2018</span--></h2>
+					                  <p>Studied the implicit regularization of stochastic gradient descent in practical deep learning systems and its correlation
+															with explicit techniques. Results can directly contribute to future NLP studies by helping researchers measure models
+															performances better. <a href="https://arxiv.org/abs/1811.00659">(paper)</a></p>
+					               </div>
+					            </div>
+					         </article>
+
+
 
 					         <article class="timeline-entry begin animate-box" data-animate-effect="fadeInBottom">
 					            <div class="timeline-entry-inner">
@@ -388,44 +406,9 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 					   </div>
 				   </div>
 				</div>
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-							<h4>UCSB Dynamic Networks: Analysis and Modeling (Dynamo) Lab </h4>
-							<a href="https://www.cs.ucsb.edu/~ambuj/">Advisor: Ambuj Singh</a>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12">
-								 <div class="timeline-centered">
-									 <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
-											<div class="timeline-entry-inner">
-												 <div class="timeline-icon color-3">
-														<i class="icon-pen2"></i>
-												 </div>
-												 <div class="timeline-label">
-													<h2><a href="#">Human Connectom Project, WU-Minn-Oxford consortium</a> </br>
-														<span>Fall 2016 – Winter 2016</span></h2>
-														<p>To get hands-on of data mining when I just started my computer science study. Participate in weekly meeting, learnt
-															the skill of implementing machine learning and feature engineering. Using MATLAB and python to do data
-															preprocessing. Help me make decision for continue exploring machine learning related area at UCSB</p>
-												 </div>
-											</div>
-									 </article>
-
-									 <article class="timeline-entry begin animate-box" data-animate-effect="fadeInBottom">
-											<div class="timeline-entry-inner">
-												 <div class="timeline-icon color-none">
-												 </div>
-											</div>
-									 </article>
-								</div>
-						 </div>
-					 </div>
-				</div>
 			</section>
 
-			<section class="colorlib-work" data-section="work">
+			<!-- <section class="colorlib-work" data-section="work">
 				<div class="colorlib-narrow-content">
 					<div class="row">
 						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
@@ -435,7 +418,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 					</div>
 					<div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
 						<div class="col-md-12">
-							<!--p class="work-menu"><span><a href="#" class="active">Graphic Design</a></span> <span><a href="#">Web Design</a></span> <span><a href="#">Software</a></span> <span><a href="#">Apps</a></span></p-->
+							<p class="work-menu"><span><a href="#" class="active">Graphic Design</a></span> <span><a href="#">Web Design</a></span> <span><a href="#">Software</a></span> <span><a href="#">Apps</a></span></p>
 						</div>
 					</div>
 					<div class="row">
@@ -506,7 +489,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 						</div>
 					</div>
 				</div>
-			</section>
+			</section> -->
 
 		</div><!-- end:colorlib-main -->
 	</div><!-- end:container-wrap -->
