@@ -1,528 +1,273 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-107842562-1"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- <title>DevResume - Bootstrap 4 Resume/CV Template For Software Developers</title> -->
 
-	  gtag('config', 'UA-107842562-1');
-	</script>
-
+	<!-- Meta -->
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Deren Lei's Personal Website</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="" />
-	<meta name="keywords" content="" />
-	<meta name="author" content="" />
-
-  <!-- Facebook and Twitter integration -->
-	<meta property="og:title" content=""/>
-	<meta property="og:image" content=""/>
-	<meta property="og:url" content=""/>
-	<meta property="og:site_name" content=""/>
-	<meta property="og:description" content=""/>
-	<meta name="twitter:title" content="" />
-	<meta name="twitter:image" content="" />
-	<meta name="twitter:url" content="" />
-	<meta name="twitter:card" content="" />
-
-	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Deren Lei's personal website">
+	<meta name="author" content="Deren Lei">
+	<title>Deren Lei</title>
 	<link rel="shortcut icon" href="favicon.ico">
 
-	<link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700" rel="stylesheet">
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
 
-	<!-- Animate.css -->
-	<link rel="stylesheet" href="css/animate.css">
-	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="css/icomoon.css">
-	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="css/bootstrap.css">
-	<!-- Flexslider  -->
-	<link rel="stylesheet" href="css/flexslider.css">
-	<!-- Flaticons  -->
-	<link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
-	<!-- Owl Carousel -->
-	<link rel="stylesheet" href="css/owl.carousel.min.css">
-	<link rel="stylesheet" href="css/owl.theme.default.min.css">
-	<!-- Theme style  -->
-	<link rel="stylesheet" href="css/style.css">
+	<!-- FontAwesome JS-->
+	<script defer src="https://use.fontawesome.com/releases/v5.8.1/js/all.js" integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ" crossorigin="anonymous"></script>
 
-	<!-- Modernizr JS -->
-	<script src="js/modernizr-2.6.2.min.js"></script>
-	<!-- FOR IE9 below -->
-	<!--[if lt IE 9]>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
+	<!-- Theme CSS -->
+	<link id="theme-style" rel="stylesheet" href="assets/css/devresume.css">
 
-	</head>
-	<body>
-	<div id="colorlib-page">
-		<div class="container-wrap">
-		<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
-		<aside id="colorlib-aside" role="complementary" class="border js-fullheight">
-			<div class="text-center">
-				<div class="author-img" style="background-image: url(images/about.png);"></div>
-				<h1 id="colorlib-logo"><a href="index.html">Deren Lei</a></h1>
-				<span class="position"><br>Computer Science Undergraduate</br>at</br><a href="https://www.cs.ucsb.edu/">UC Santa Barbara</a></br></span>
-			</div>
-			<nav id="colorlib-main-menu" role="navigation" class="navbar">
-				<div id="navbar" class="collapse">
-					<ul>
-						<li class="active"><a href="#" data-nav-section="home">Home</a></li>
-						<li><a href="#" data-nav-section="about">About</a></li>
-						<!--li><a href="#" data-nav-section="skills">Skills</a></li-->
-						<li><a href="#" data-nav-section="education">Education</a></li>
-						<li><a href="#" data-nav-section="experience">Research</a></li>
-						<!--li><a href="#" data-nav-section="work">Work</a></li-->
-					</ul>
-				</div>
-			</nav>
+</head>
 
-			<div class="colorlib-footer">
-				<p><small>&copy; <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved Powered by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --> </span>
-				<ul>
-					<li><a href="#"><i class="icon-facebook2"></i></a></li>
-					<li><a href="#"><i class="icon-twitter2"></i></a></li>
-					<li><a href="#"><i class="icon-instagram"></i></a></li>
-					<li><a href="#"><i class="icon-linkedin2"></i></a></li>
-				</ul>
-			</div>
+<body>
 
-		</aside>
+	<!-- DEMO ONLY -->
+	<!-- <div class="demo-banner px-2 py-3 text-white text-center font-weight-bold bg-primary">Want a professional Bootstrap 4 vcard & portfolio template for building your personal brand?<br class="d-lg-none"><a class="btn demo-btn-on-bg text-white font-weight-bold ml-2 mt-2 mt-lg-0" href="https://themes.3rdwavemedia.com/bootstrap-templates/resume/devcard-bootstrap-4-vcard-portfolio-template-for-software-developers/" target="_blank"><i class="fas fa-external-link-alt mr-2"></i>Check out DevCard</a>
+	</div> -->
 
-		<div id="colorlib-main">
-			<section id="colorlib-hero" class="js-fullheight" data-section="home">
-				<div class="flexslider js-fullheight">
-					<ul class="slides">
-				   	<li style="background-image: url(images/img_bg_1.jpg);">
-				   		<div class="overlay"></div>
-				   		<div class="container-fluid">
-				   			<div class="row">
-					   			<div class="col-md-6 col-md-offset-3 col-md-pull-3 col-sm-12 col-xs-12 js-fullheight slider-text">
-					   				<div class="slider-text-inner js-fullheight">
-					   					<div class="desc">
-						   					<h1>Hi! <br>I'm Deren</h1>
-						   					<!--h2>100% html5 bootstrap templates Made by <a href="https://colorlib.com/" target="_blank">colorlib.com</a></h2-->
-												<p><a class="btn btn-primary btn-learn" href="files/Deren_Lei_resume.pdf"><b>Download Resume </b><i class="icon-download4"></i></a></p>
-												<!--p><a class="btn btn-primary btn-learn" href="files/transcript.pdf"><b>Download Transcript (Fall 2018 included) </b><i class="icon-download4"></i></a></p-->
-											</div>
-					   				</div>
-					   			</div>
-					   		</div>
-				   		</div>
-				   	</li>
+	<div class="main-wrapper">
+		<div class="container px-3 px-lg-5">
+			<article class="resume-wrapper mx-auto theme-bg-light p-5 mb-5 my-5 shadow-lg">
 
-				  	</ul>
-			  	</div>
-			</section>
+				<div class="resume-header">
+					<div class="row align-items-center">
+						<div class="resume-title col-12 col-md-6 col-lg-8 col-xl-9">
+							<h2 class="resume-name mb-0 text-uppercase">Deren Lei</h2>
+							<div class="resume-tagline mb-3 mb-md-0" style="font-family:STKaiti; font-size:18pt">雷德仁</div>
+						</div><!--//resume-title-->
+						<div class="resume-contact col-12 col-md-6 col-lg-4 col-xl-3">
+							<ul class="list-unstyled mb-0">
+								<!-- <li class="mb-2"><i class="fas fa-phone-square fa-fw fa-lg mr-2 "></i><a class="resume-link" href="tel:#">0123 4567 890</a></li> -->
+								<li class="mb-2"><i class="fas fa-envelope-square fa-fw fa-lg mr-2"></i><a class="resume-link" href="mailto:derenlei@usc.edu">derenlei@usc.edu</a></li>
+								<li class="mb-2"><i class="fas fa-globe fa-fw fa-lg mr-2"></i><a class="resume-link" href="www.derenlei.com">www.derenlei.com</a></li>
+								<li class="mb-0"><i class="fas fa-map-marker-alt fa-fw fa-lg mr-2"></i>Los Angeles</li>
+							</ul>
+						</div><!--//resume-contact-->
+					</div><!--//row-->
 
-			<section class="colorlib-about" data-section="about">
-				<div class="colorlib-narrow-content">
+				</div><!--//resume-header-->
+				<hr>
+				<div class="resume-intro py-3">
+					<div class="media flex-column flex-md-row align-items-center">
+						<img class="resume-profile-image mb-3 mb-md-0 mr-md-5 ml-md-0 rounded mx-auto" src="assets/images/resume-profile2.jpg" alt="image">
+						<div class="media-body text-left">
+							<p class="mb-0">Deren Lei is currently a graduate student at USC. He is interested in building practical intelligent agents that could learn to reason under uncertainties in the real-world scenario.
+							 His current focus lies in the area of natural language processing and deep learning.</p>
+						</div><!--//media-body-->
+					</div>
+				</div><!--//resume-intro-->
+				<hr>
+				<div class="resume-body">
 					<div class="row">
-						<div class="col-md-12">
-							<div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
-								<div class="col-md-12">
-									<div class="about-desc">
-										<span class="heading-meta">About Me</span>
-										<h2 class="colorlib-heading">Who Am I?</h2>
-										<p><strong>Hi I'm Deren Lei.</strong> I'm a senior undergraduate student at UC Santa Barbara majoring computer science and minoring statistical science in College of Engineering honor's program.
-										I have completed majority of the degree requirments and now focusing on building my math and stats skills by taking graduate level courses. My area of interests are: Deep Learning, Reinforcement Learning, Natural Language Processing
-									and its intersection with Computer Vision.</p>
-										<p>I'm currenly a active researcher at UCSB Natural Language Processing Lab, while seeking for graduate programs to continue my study and research. My goal is to apply my AI skills in industry.</p>
+						<div class="resume-main col-12 col-lg-8 col-xl-9 pr-0 pr-lg-5">
+							<section class="work-section py-3">
+								<h3 class="text-uppercase resume-section-heading mb-4">Work Experiences</h3>
+								<div class="item mb-3">
+									<div class="item-heading row align-items-center mb-2">
+										<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">NLP Research Assistant</h4>
+										<div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-left text-md-right">June 2019 – Present</div>
+										<div class="item-meta col-12 col-md-6 col-lg-6 text-muted text-left"> <a href="http://inklab.usc.edu/"> USC INK Lab </a> | Advisor: <a href="http://ink-ron.usc.edu/xiangren/"> Prof. Xiang Ren </a> </div>
+									</div>
+									<div class="item-content">
+										<p>Focusing on neural symbolic reasoning with an emphasis on natural language and knowledge graph applications:</p>
+										<ul class="resume-list">
+											<li>Leveraged symbolic rules with collaborative RL agents for knowledge graph reasoning. (In Submission)</li>
+											<li>Seeking ways to utilize unstructured data directly. (On going)</li>
+										</ul>
+									</div>
+								</div><!--//item-->
+								<div class="item mb-3">
+									<div class="item-heading row align-items-center mb-2">
+										<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">NLP Research Assistant</h4>
+										<div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-left text-md-right">Oct 2017 – June 2019</div>
+										<div class="item-meta col-12 col-md-6 col-lg-7 text-muted text-left"> <a href="http://nlp.cs.ucsb.edu/"> UCSB NLP Lab </a> | Advisor: <a href="https://sites.cs.ucsb.edu/~william/"> Prof. William Wang </a> </div>
+
+									</div>
+									<div class="item-content">
+										<p>Spend majority of the time on NLP relevant research starting from 3rd year. Mostly interested in natural language generation:</p>
+										<ul class="resume-list">
+											<li>Proposed new reinforcement learning approach with distributional semantics for abstract summarization.</li>
+											<li>Assisted other researchers to improve fine-grained entity typing performance from internal inconsistency issues.</li>
+											<li>Expanded the CNN/Dailymail dataset with related images and videos for new multi-model tasks.</li>
+											<li>Observed and analyzed the implicit regularization of vanilla stochastic gradient descent in three common NLP tasks.</li>
+										</ul>
+									</div>
+								</div><!--//item-->
+
+								<div class="item">
+									<div class="item-heading row align-items-center mb-2">
+										<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Software Development Engineer Intern</h4>
+										<div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-left text-md-right">Summer 2017</div>
+										<div class="item-meta col-12 col-md-6 col-lg-7 text-muted text-left">Amazon.cn</div>
+									</div>
+									<div class="item-content">
+										<!-- <p>Role description goes here ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus. </p> -->
+										<ul class="resume-list">
+											<li>Created an internal tool helping developers to do automatic product page status checking.</li>
+											<li>Did web crawling and data preprocessing for softline product recommendation deep learning algorithm</li>
+										</ul>
+									</div>
+								</div><!--//item-->
+
+
+							</section><!--//work-section-->
+
+
+							<section class="project-section py-3">
+								<h3 class="text-uppercase resume-section-heading mb-4">Publications</h3>
+								<div class="item mb-3">
+									<!-- <div class="item-heading row align-items-center mb-2">
+										<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Project Lorem Ipsum</h4>
+										<div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-left text-md-right">Open Source</div>
+
+									</div> -->
+									<div class="item-content">
+										<ul class="resume-list">
+											<li>
+												<b> "Learning Collaborative Agents with Rule Guidance for Knowledge Graph Reasoning" </b> (In submission) <br/>
+												<b> Deren Lei* </b>, Gangrong Jiang*, Xiaotao Gu, Yuning Mao, Xiang Ren (* equal contribution) <br/><br/>
+											</li>
+											<li>
+												<b> "Deep Reinforcement Learning with Distributional Semantic Rewards for Abstractive Summarization" </b> <br/>
+												<b> Deren Lei* </b>, Siyao Li*, Pengda Qin, William Yang Wang (* equal contribution) <br/>
+												<b> EMNLP-IJCNLP 2019 </b>, short paper, <a href="https://arxiv.org/abs/1909.00141">[paper]</a> <br/><br/>
+											</li>
+											<li>
+												<b> "Imposing Label-Relational Inductive Bias for Extremely Fine-Grained Entity Typing" </b> <br/>
+												Wenhan Xiong, Jiawei Wu, <b> Deren Lei </b>, Mo Yu, Shiyu Chang, Xiaoxiao Guo and William Yang Wang  <br/>
+												<b> NAACL-HLT 2019 </b>, long paper, <a href="https://arxiv.org/abs/1903.02591">[paper]</a> <br/><br/>
+											</li>
+											<li>
+												<b> "Implicit Regularization of Stochastic Gradient Descent in NLP: Observations and Implications" </b> <br/>
+												<b> Deren Lei </b>, Zichen Sun, Yijun Xiao, William Yang Wang   <br/>
+												<b>Technical Report </b>, long paper, <a href="https://arxiv.org/abs/1811.00659">[paper]</a>
+											</li>
+										</ul>
+
+
 									</div>
 								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-3 animate-box" data-animate-effect="fadeInLeft">
-									<div class="services color-1">
-										<span class="icon2"><i class="icon-bulb"></i></span>
-										<h3>Machine Learning</h3>
+							</section>
+
+							<!--section class="project-section py-3">
+								<h3 class="text-uppercase resume-section-heading mb-4">Projects</h3>
+								<div class="item mb-3">
+									<div class="item-heading row align-items-center mb-2">
+										<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Project Lorem Ipsum</h4>
+										<div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-left text-md-right">Open Source</div>
+
+									</div>
+									<div class="item-content">
+										<p>You can use this section for your side projects. You can <a href="#" class="theme-link">provide a project link here</a> as well. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+
+
 									</div>
 								</div>
-								<div class="col-md-3 animate-box" data-animate-effect="fadeInRight">
-									<div class="services color-2">
-										<span class="icon2"><i class="icon-file-word"></i></span>
-										<h3>Language Technologies</h3>
+								<div class="item">
+									<div class="item-heading row align-items-center mb-2">
+										<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Project Sed Fringilla</h4>
+										<div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-left text-md-right">Open Source</div>
+
+									</div>
+									<div class="item-content">
+										<p>You can use this section for your side projects. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.</p>
+
 									</div>
 								</div>
-								<div class="col-md-3 animate-box" data-animate-effect="fadeInTop">
-									<div class="services color-3">
-										<span class="icon2"><i class="icon-study"></i></span>
-										<h3>Reinforcement Learning</h3>
-									</div>
-								</div>
-								<div class="col-md-3 animate-box" data-animate-effect="fadeInBottom">
-									<div class="services color-4">
-										<span class="icon2"><i class="icon-phone3"></i></span>
-										<h3>Software Application</h3>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-
-			<div id="colorlib-counter" class="colorlib-counters" style="background-image: url(images/cover_bg_1.jpg);" data-stellar-background-ratio="0.5">
-				<div class="overlay"></div>
-				<div class="colorlib-narrow-content">
-					<div class="row">
-					</div>
-					<div class="row">
-						<div class="col-md-3 text-center animate-box">
-							<span class="colorlib-counter js-counter" data-from="0" data-to="173" data-speed="5000" data-refresh-interval="50"></span>
-							<span class="colorlib-counter-label">Units</span>
-						</div>
-						<div class="col-md-3 text-center animate-box">
-							<span class="colorlib-counter js-counter" data-from="0" data-to="50" data-speed="5000" data-refresh-interval="50"></span>
-							<span class="colorlib-counter-label">Courses</span>
-						</div>
-						<div class="col-md-3 text-center animate-box">
-							<span class="colorlib-counter js-counter" data-from="0" data-to="3" data-speed="5000" data-refresh-interval="50"></span>
-							<span class="colorlib-counter-label">Years</span>
-						</div>
-						<div class="col-md-3 text-center animate-box">
-							<span class="colorlib-counter js-counter" data-from="0" data-to="1" data-speed="5000" data-refresh-interval="50"></span>
-							<span class="colorlib-counter-label">Major</span>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<!--section class="colorlib-skills" data-section="skills">
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-							<span class="heading-meta">My Specialty</span>
-							<h2 class="colorlib-heading animate-box">My Skills</h2>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
-							<p>The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didn’t listen. She packed her seven versalia, put her initial into the belt and made herself on the way.</p>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-							<div class="progress-wrap">
-								<h3>Photoshop</h3>
-								<div class="progress">
-								 	<div class="progress-bar color-1" role="progressbar" aria-valuenow="75"
-								  	aria-valuemin="0" aria-valuemax="100" style="width:75%">
-								    <span>75%</span>
-								  	</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
-							<div class="progress-wrap">
-								<h3>jQuery</h3>
-								<div class="progress">
-								 	<div class="progress-bar color-2" role="progressbar" aria-valuenow="60"
-								  	aria-valuemin="0" aria-valuemax="100" style="width:60%">
-								    <span>60%</span>
-								  	</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-							<div class="progress-wrap">
-								<h3>HTML5</h3>
-								<div class="progress">
-								 	<div class="progress-bar color-3" role="progressbar" aria-valuenow="85"
-								  	aria-valuemin="0" aria-valuemax="100" style="width:85%">
-								    <span>85%</span>
-								  	</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
-							<div class="progress-wrap">
-								<h3>CSS3</h3>
-								<div class="progress">
-								 	<div class="progress-bar color-4" role="progressbar" aria-valuenow="90"
-								  	aria-valuemin="0" aria-valuemax="100" style="width:90%">
-								    <span>90%</span>
-								  	</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-							<div class="progress-wrap">
-								<h3>WordPress</h3>
-								<div class="progress">
-								 	<div class="progress-bar color-5" role="progressbar" aria-valuenow="70"
-								  	aria-valuemin="0" aria-valuemax="100" style="width:70%">
-								    <span>70%</span>
-								  	</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
-							<div class="progress-wrap">
-								<h3>SEO</h3>
-								<div class="progress">
-								 	<div class="progress-bar color-6" role="progressbar" aria-valuenow="80"
-								  	aria-valuemin="0" aria-valuemax="100" style="width:80%">
-								    <span>80%</span>
-								  	</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section-->
-
-			<section class="colorlib-education" data-section="education">
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-							<span class="heading-meta">Education</span>
-							<h2 class="colorlib-heading animate-box">Education</h2>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
-							<div class="fancy-collapse-panel">
-								<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-									<div class="panel panel-default">
-									    <div class="panel-heading" role="tab" id="headingOne">
-									        <h4 class="panel-title">
-									            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">B.S. Computer Science - UC Santa Barbara
-									            </a>
-									        </h4>
-									    </div>
-									    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-												<div class="panel-body">
-														<p>Before I changed my major to computer science, I have 2-quarter experiences in Physics major and 2-quarter experiences in Statistical Science.
-														I'm now continuing my stats study as a minor.</p>
-														<p>Core courses: calculus, linear algebra, regression analysis, probability, machine learning, deep learning, artificial intelligence, natural language processing, android development, Java development.</p>
-												</div>
-									    </div>
-									</div>
-									<!--div class="panel panel-default">
-									    <div class="panel-heading" role="tab" id="headingTwo">
-									        <h4 class="panel-title">
-									            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Bachelor Degree of Computer Science
-									            </a>
-									        </h4>
-									    </div>
-									    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-									        <div class="panel-body">
-									            <p>Far far away, behind the word <strong>mountains</strong>, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-													<ul>
-														<li>Separated they live in Bookmarksgrove right</li>
-														<li>Separated they live in Bookmarksgrove right</li>
-													</ul>
-									        </div>
-									    </div>
-									</div-->
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-
-			<section class="colorlib-experience" data-section="experience">
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-							<span class="heading-meta">Research</span>
-							<h2 class="colorlib-heading animate-box">Research Experience</h2>
-							<h4>UCSB Natural Language Processing Lab </h4>
-							<a href="https://www.cs.ucsb.edu/~william/">Advisor: William Wang</a>
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="col-md-12">
-				         <div class="timeline-centered">
-
-									 <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
-											<div class="timeline-entry-inner">
-												 <div class="timeline-icon color-1">
-														<i class="icon-pen2"></i>
-												 </div>
-												 <div class="timeline-label">
-													<h2><a href="#">Stabilized Deep Reinforcement Learning for Dialogue</a> </br>
-														<!--span>Fall 2017</span--></h2>
-														<p>Deep reinforcement learning in NLP have problems of high variance predictions and sparse reward signals. Google’s
-															recently released BERT can be a good language modeling prior and solve the above issues.</p>
-												 </div>
-											</div>
-									 </article>
-
-					         <article class="timeline-entry animate-box" data-animate-effect="fadeInRight">
-					            <div class="timeline-entry-inner">
-
-					               <div class="timeline-icon color-2">
-					                  <i class="icon-pen2"></i>
-					               </div>
-
-					               <div class="timeline-label">
-					                  <h2><a href="#">Solving Information Inconsistency</a> </br><!--span>Fall 2018</span--></h2>
-					                  <p>Recent entity typing tasks move to more diverse and fine-grained datasets and current learning approaches have
-															contradiction predictions. Improved performances by avoiding inconsistency outputs using attentions.</p>
-					               </div>
-					            </div>
-					         </article>
-
-									 <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
-					            <div class="timeline-entry-inner">
-					               <div class="timeline-icon color-3">
-					                  <i class="icon-pen2"></i>
-					               </div>
-					               <div class="timeline-label">
-					               	<h2><a href="#">Multimodal Headline Generation</a> </br>
-														<!--span>Fall 2017</span--></h2>
-					                  <p>Helping AI powered news content platform company generate attractive smartphone notifications based on contents.
-															Did data collection from CNN news: headline, story highlights, article, images, categories, etc to help our model
-															generates headline via different resources. Our dataset support multiple NLP tasks testing: 1) article classification. 2)
-															headline generation. 3) abstractive summarization.</p>
-					               </div>
-					            </div>
-					         </article>
-
-					         <article class="timeline-entry animate-box" data-animate-effect="fadeInRight">
-					            <div class="timeline-entry-inner">
-					               <div class="timeline-icon color-4">
-					                  <i class="icon-pen2"></i>
-					               </div>
-												 <div class="timeline-label">
-					               	<h2><a href="#">Implicit Regularization of SGD in NLP </br>(First author, in submission)</a> </br>
-														<!--span>Summer 2018</span--></h2>
-					                  <p>Studied the implicit regularization of stochastic gradient descent in practical deep learning systems and its correlation
-															with explicit techniques. Results can directly contribute to future NLP studies by helping researchers measure models
-															performances better. <a href="https://arxiv.org/abs/1811.00659">(paper)</a></p>
-					               </div>
-					            </div>
-					         </article>
+							</section-->
 
 
+						</div><!--//resume-main-->
+						<aside class="resume-aside col-12 col-lg-4 col-xl-3 px-lg-4 pb-lg-4">
+							<section class="education-section py-3">
+								<h3 class="text-uppercase resume-section-heading mb-4">Education</h3>
+								<ul class="list-unstyled resume-education-list">
+									<li class="mb-3">
+										<div class="resume-degree font-weight-bold">MSc in Computer Science</div>
+										<div class="resume-degree-org text-muted">University of Southern California</div>
+										<div class="resume-degree-time text-muted">2019 - 2022</div>
+									</li>
+									<li>
+										<div class="resume-degree font-weight-bold">BSc in Computer Science</div>
+										<div class="resume-degree-org text-muted">UC Santa Barbara</div>
+										<div class="resume-degree-time text-muted">2015 - 2019</div>
+									</li>
+								</ul>
+							</section><!--//education-section-->
 
-					         <article class="timeline-entry begin animate-box" data-animate-effect="fadeInBottom">
-					            <div class="timeline-entry-inner">
-					               <div class="timeline-icon color-none">
-					               </div>
-					            </div>
-					         </article>
-					      </div>
-					   </div>
-				   </div>
-				</div>
-			</section>
+							<section class="skills-section py-3">
+								<h3 class="text-uppercase resume-section-heading mb-4">Skills</h3>
+								<div class="item">
+									<h4 class="item-title">Technical</h4>
+									<ul class="list-unstyled resume-skills-list">
+										<li class="mb-2">Python/Java/C++</li>
+										<li class="mb-2">Scala/Functional programming<li>
+										<li class="mb-2">MATLAB/R/Numpy<li>
+											<li class="mb-2">Tensorflow/PyTorch</li>
+											<li class="mb-2">Keras/Sklearn</li>
+											<li class="mb-2">Android</li>
+										</ul>
+									</div><!--//item-->
+									<!-- <div class="item">
+										<h4 class="item-title">Professional</h4>
+										<ul class="list-unstyled resume-skills-list">
+											<li class="mb-2">Effective communication</li>
+											<li class="mb-2">Team player<li>
+												<li class="mb-2">Strong problem solver</li>
+												<li>Good time management</li>
+											</ul>
+										</div--><!--//item-->
+									</section><!--//skills-section-->
 
-			<!-- <section class="colorlib-work" data-section="work">
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-							<span class="heading-meta">My Work</span>
-							<h2 class="colorlib-heading animate-box">Recent Work </br>(under construction)</h2>
-						</div>
-					</div>
-					<div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
-						<div class="col-md-12">
-							<p class="work-menu"><span><a href="#" class="active">Graphic Design</a></span> <span><a href="#">Web Design</a></span> <span><a href="#">Software</a></span> <span><a href="#">Apps</a></span></p>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-							<div class="project" style="background-image: url(images/img-1.jpg);">
-								<div class="desc">
-									<div class="con">
-										<h3><a href="work.html">Work 01</a></h3>
-										<span>Website</span>
-										<p class="icon">
-											<span><a href="#"><i class="icon-share3"></i></a></span>
-											<span><a href="#"><i class="icon-eye"></i> 100</a></span>
-											<span><a href="#"><i class="icon-heart"></i> 49</a></span>
-										</p>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
-							<div class="project" style="background-image: url(images/img-2.jpg);">
-								<div class="desc">
-									<div class="con">
-										<h3><a href="work.html">Work 02</a></h3>
-										<span>Animation</span>
-										<p class="icon">
-											<span><a href="#"><i class="icon-share3"></i></a></span>
-											<span><a href="#"><i class="icon-eye"></i> 100</a></span>
-											<span><a href="#"><i class="icon-heart"></i> 49</a></span>
-										</p>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInTop">
-							<div class="project" style="background-image: url(images/img-3.jpg);">
-								<div class="desc">
-									<div class="con">
-										<h3><a href="work.html">Work 03</a></h3>
-										<span>Illustration</span>
-										<p class="icon">
-											<span><a href="#"><i class="icon-share3"></i></a></span>
-											<span><a href="#"><i class="icon-eye"></i> 100</a></span>
-											<span><a href="#"><i class="icon-heart"></i> 49</a></span>
-										</p>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInBottom">
-							<div class="project" style="background-image: url(images/img-4.jpg);">
-								<div class="desc">
-									<div class="con">
-										<h3><a href="work.html">Work 04</a></h3>
-										<span>Application</span>
-										<p class="icon">
-											<span><a href="#"><i class="icon-share3"></i></a></span>
-											<span><a href="#"><i class="icon-eye"></i> 100</a></span>
-											<span><a href="#"><i class="icon-heart"></i> 49</a></span>
-										</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12 animate-box">
-							<p><a href="#" class="btn btn-primary btn-lg btn-load-more">Load more <i class="icon-reload"></i></a></p>
-						</div>
-					</div>
-				</div>
-			</section> -->
+									<section class="education-section py-3">
+										<h3 class="text-uppercase resume-section-heading mb-4">Awards</h3>
+										<ul class="list-unstyled resume-awards-list">
+											<li class="mb-3">
+												<div class="font-weight-bold">UCSB Honors Scholar</div>
+												<div class="text-muted">UC Santa Barbara (2015-2019)</div>
+											</li>
+											<li>
+												<div class="font-weight-bold">Race On self-driving car competition (4/42)</div>
+												<div class="text-muted">University of Southern California (2019)</div>
+											</li>
+										</ul>
+									</section><!--//education-section-->
+									<section class="skills-section py-3">
+										<h3 class="text-uppercase resume-section-heading mb-4">Interests</h3>
+										<ul class="list-unstyled resume-interests-list mb-0">
+											<li class="mb-2">Soccer</li>
+											<li class="mb-2">Photography</li>
+											<li>Travelling</li>
+										</ul>
+									</section><!--//certificates-section-->
 
-		</div><!-- end:colorlib-main -->
-	</div><!-- end:container-wrap -->
-	</div><!-- end:colorlib-page -->
+								</aside><!--//resume-aside-->
+							</div><!--//row-->
+						</div><!--//resume-body-->
+						<hr>
+						<div class="resume-footer text-center">
+							<ul class="resume-social-list list-inline mx-auto mb-0 d-inline-block text-muted">
+								<!-- <li class="list-inline-item mb-lg-0 mr-3"><a class="resume-link" href="#"><i class="fab fa-github-square fa-2x mr-2" data-fa-transform="down-4"></i><span class="d-none d-lg-inline-block text-muted">github.com/username</span></a></li> -->
+								<li class="list-inline-item mb-lg-0 mr-3"><a class="resume-link" href="linkedin.com/in/derenlei"><i class="fab fa-linkedin fa-2x mr-2" data-fa-transform="down-4"></i><span class="d-none d-lg-inline-block text-muted">linkedin.com/in/derenlei</span></a></li>
+								<li class="list-inline-item mb-lg-0 mr-3"><a class="resume-link" href="https://scholar.google.com/citations?user=Qir1J5oAAAAJ&hl=en"><i class="fab fa-google fa-2x mr-2" data-fa-transform="down-4"></i><span class="d-none d-lg-inline-block text-muted">Google Scholar</span></a></li>
+								<!-- <li class="list-inline-item mb-lg-0 mr-lg-3"><a class="resume-link" href="#"><i class="fab fa-twitter-square fa-2x mr-2" data-fa-transform="down-4"></i><span class="d-none d-lg-inline-block text-muted">@twittername</span></a></li> -->
+							</ul>
+						</div><!--//resume-footer-->
+					</article>
 
-	<!-- jQuery -->
-	<script src="js/jquery.min.js"></script>
-	<!-- jQuery Easing -->
-	<script src="js/jquery.easing.1.3.js"></script>
-	<!-- Bootstrap -->
-	<script src="js/bootstrap.min.js"></script>
-	<!-- Waypoints -->
-	<script src="js/jquery.waypoints.min.js"></script>
-	<!-- Flexslider -->
-	<script src="js/jquery.flexslider-min.js"></script>
-	<!-- Owl carousel -->
-	<script src="js/owl.carousel.min.js"></script>
-	<!-- Counters -->
-	<script src="js/jquery.countTo.js"></script>
+				</div><!--//container-->
+
+				<footer class="footer text-center py-4">
+					<!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can buy the commercial license via our website: themes.3rdwavemedia.com */-->
+					<small class="copyright text-muted">Designed with <i class="fas fa-heart"></i> by <a class="theme-link" href="http://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a></small>
+				</footer>
+
+			</div><!--//main-wrapper-->
 
 
-	<!-- MAIN JS -->
-	<script src="js/main.js"></script>
-
-	</body>
+</body>
 </html>
