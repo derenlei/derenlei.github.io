@@ -1,353 +1,578 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-107842562-1"></script>
-	<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deren Lei - Research Engineer</title>
+<style>
 
-  gtag('config', 'UA-107842562-1');
-	</script>
+:root {
+  --bg: #0d1117;
+  --bg-surface: #0d1117;
+  --bg-header: #010409;
+  --border: #21262d;
+  --text: #c9d1d9;
+  --text-muted: #8b949e;
+  --green: #10b981;
+  --green-dim: #065f46;
+  --accent: #10b981;
+  --font-mono: 'SF Mono', 'Cascadia Code', 'Fira Code', 'JetBrains Mono', 'Consolas', 'Monaco', monospace;
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+[data-theme="light"] {
+  --bg: #f6f8fa;
+  --bg-surface: #ffffff;
+  --bg-header: #f0f2f5;
+  --border: #d0d7de;
+  --text: #1f2328;
+  --text-muted: #656d76;
+  --green: #0e7a52;
+  --green-dim: #dafbe1;
+  --accent: #0e7a52;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; }
+body {
+  font-family: var(--font-mono);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: background .3s, color .3s;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
 
-	<!-- <title>DevResume - Bootstrap 4 Resume/CV Template For Software Developers</title> -->
+/* ── HEADER BAR ─────────────────────────────────────────────────────── */
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 2rem;
+  background: var(--bg-header);
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+  min-height: 56px;
+}
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.header-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.5px;
+}
+.header-sep {
+  color: var(--border);
+  font-size: 0.9rem;
+}
+.header-title {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.social-links {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+}
+.social-links a {
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  transition: color .2s;
+}
+.social-links a:hover { color: var(--accent); text-decoration: none; }
+.social-links svg { width: 20px; height: 20px; fill: currentColor; }
 
-	<!-- Meta -->
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="Deren Lei's personal website">
-	<meta name="author" content="Deren Lei">
-	<title>Deren Lei</title>
-	<link rel="shortcut icon" href="favicon.ico">
+.theme-toggle {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all .2s;
+  white-space: nowrap;
+}
+.theme-toggle:hover { color: var(--accent); border-color: var(--accent); }
 
-	<!-- Google Fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
+/* ── TERMINAL ───────────────────────────────────────────────────────── */
+.terminal-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  padding: 1.5rem 2rem 2rem;
+  min-height: 0;
+}
+.terminal {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  max-width: 1000px;
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+}
+.terminal-titlebar {
+  display: flex;
+  align-items: center;
+  padding: 0.6rem 1rem;
+  background: var(--bg-header);
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+.terminal-dots {
+  display: flex;
+  gap: 6px;
+}
+.terminal-dots span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+.terminal-dots span:nth-child(1) { background: #ff5f57; }
+.terminal-dots span:nth-child(2) { background: #febc2e; }
+.terminal-dots span:nth-child(3) { background: #28c840; }
+.terminal-titlebar-text {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+.terminal-body {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 1.5rem 2rem;
+  font-size: 0.875rem;
+  line-height: 1.75;
+  background: var(--bg-surface);
+}
+.terminal-body::-webkit-scrollbar { width: 8px; }
+.terminal-body::-webkit-scrollbar-track { background: transparent; }
+.terminal-body::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+.terminal-body::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
 
-	<!-- FontAwesome JS-->
-	<script defer src="https://use.fontawesome.com/releases/v5.8.1/js/all.js" integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ" crossorigin="anonymous"></script>
+.prompt-line { color: var(--accent); }
+.cmd-text { color: var(--text); }
+.output-text { color: var(--text-muted); white-space: pre-wrap; }
+.output-text .highlight { color: var(--accent); font-weight: 600; }
 
-	<!-- Theme CSS -->
-	<link id="theme-style" rel="stylesheet" href="assets/css/devresume.css">
+/* Input area */
+.input-row {
+  display: flex;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+.input-prompt {
+  color: var(--accent);
+  white-space: nowrap;
+  margin-right: 0.5rem;
+}
+.cmd-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  caret-color: var(--accent);
+}
+.cmd-input::placeholder { color: var(--border); }
 
+/* Cursor blink */
+@keyframes blink { 0%,49% { opacity: 1; } 50%,100% { opacity: 0; } }
+.cursor-blink {
+  display: inline-block;
+  width: 8px;
+  height: 1.1em;
+  background: var(--accent);
+  animation: blink 1s step-end infinite;
+  vertical-align: text-bottom;
+  margin-left: 1px;
+}
+
+/* ── RESPONSIVE ─────────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .site-header { padding: 0.5rem 1rem; }
+  .terminal-body { padding: 1rem; font-size: 0.8rem; }
+  .header-name { font-size: 0.8rem; }
+  .header-title { display: none; }
+}
+
+</style>
 </head>
-
 <body>
-	<!-- DEMO ONLY -->
-	<!-- <div class="demo-banner px-2 py-3 text-white text-center font-weight-bold bg-primary">Want a professional Bootstrap 4 vcard & portfolio template for building your personal brand?<br class="d-lg-none"><a class="btn demo-btn-on-bg text-white font-weight-bold ml-2 mt-2 mt-lg-0" href="https://themes.3rdwavemedia.com/bootstrap-templates/resume/devcard-bootstrap-4-vcard-portfolio-template-for-software-developers/" target="_blank"><i class="fas fa-external-link-alt mr-2"></i>Check out DevCard</a>
-	</div> -->
 
-	<div class="main-wrapper">
-		<div class="container px-3 px-lg-5">
-			<article class="resume-wrapper mx-auto theme-bg-light p-5 mb-5 my-5 shadow-lg">
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-left">
+    <span class="header-name">Deren Lei</span>
+    <span class="header-sep">│</span>
+    <span class="header-title">Research Engineer @ Meta MSL</span>
+  </div>
+  <div class="header-right">
+    <nav class="social-links">
+      <a href="https://www.linkedin.com/in/derenlei/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+      <a href="https://scholar.google.com/citations?user=Qir1J5oAAAAJ&amp;hl=en" target="_blank" rel="noopener" aria-label="Google Scholar"><svg viewBox="0 0 24 24"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 100 14 7 7 0 000-14z"/></svg></a>
+      <a href="https://github.com/derenlei" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+    </nav>
+    <button class="theme-toggle" id="theme-toggle">&gt; dark_mode</button>
+  </div>
+</header>
 
-				<div class="resume-header">
-					<div class="row align-items-center">
-						<div class="resume-title col-12 col-md-6 col-lg-8 col-xl-9">
-							<h2 class="resume-name mb-0 text-uppercase">Deren Lei</h2>
-							<div class="resume-tagline mb-3 mb-md-0" style="font-family:STKaiti; font-size:18pt">雷德仁</div>
-						</div><!--//resume-title-->
-						<div class="resume-contact col-12 col-md-6 col-lg-4 col-xl-3">
-							<ul class="list-unstyled mb-0">
-								<!-- <li class="mb-2"><i class="fas fa-phone-square fa-fw fa-lg mr-2 "></i><a class="resume-link" href="tel:#">0123 4567 890</a></li> -->
-								<li class="mb-2"><i class="fas fa-envelope-square fa-fw fa-lg mr-2"></i><a class="resume-link" href="mailto:derenlei@usc.edu">derenlei@usc.edu</a></li>
-								<li class="mb-2"><i class="fas fa-globe fa-fw fa-lg mr-2"></i><a class="resume-link" href="www.derenlei.com">www.derenlei.com</a></li>
-								<li class="mb-0"><i class="fas fa-map-marker-alt fa-fw fa-lg mr-2"></i>Los Angeles</li>
-							</ul>
-						</div><!--//resume-contact-->
-					</div><!--//row-->
+<!-- TERMINAL (centered window) -->
+<div class="terminal-wrapper">
+<div class="terminal">
+  <div class="terminal-titlebar">
+    <div class="terminal-dots"><span></span><span></span><span></span></div>
+    <span class="terminal-titlebar-text">deren.lei@research ~</span>
+  </div>
+  <div class="terminal-body">
+    <div id="terminal-output"></div>
+    <div class="input-row" id="input-row" style="display:none;">
+      <span class="input-prompt">deren.lei ~ $&nbsp;</span>
+      <input type="text" class="cmd-input" id="cmd-input" placeholder="Type a command or ask a question..." autocomplete="off" spellcheck="false">
+    </div>
+  </div>
+</div>
+</div>
 
-				</div><!--//resume-header-->
-				<hr>
-				<div class="resume-intro py-3">
-					<div class="media flex-column flex-md-row align-items-center">
-						<img class="resume-profile-image mb-3 mb-md-0 mr-md-5 ml-md-0 rounded mx-auto" src="assets/images/resume-profile1.jpg" alt="image">
-						<div class="media-body text-left">
-							<p class="mb-0">Deren Lei is currently a graduate student at USC. He is interested in building practical intelligent agents that could learn to reason under uncertainties in the real-world scenario. Specifically,
-								develop efficient deep learning solutions to product development and enhancement. His current focus lies in the area of natural language processing and deep learning. </p>
-						</div><!--//media-body-->
-					</div>
-				</div><!--//resume-intro-->
-				<hr>
-				<div class="resume-body">
-					<div class="row">
-						<div class="resume-main col-12 col-lg-8 col-xl-9 pr-0 pr-lg-5">
-							<section class="work-section py-3">
-								<h3 class="text-uppercase resume-section-heading mb-4">Work Experiences</h3>
+<script>
+(function() {
+  var output, inputEl, inputRow;
+  var history = [];
+  var histIdx = -1;
 
-								<div class="item mb-3">
-									<div class="item-heading row align-items-center mb-2">
-										<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">NLP Applied Scientist Intern </h4>
-										<div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-left text-md-right">May 2020 – August 2020</div>
-										<div class="item-meta col-12 col-md-6 col-lg-6 text-muted text-left">  Microsoft Corporation</div>
-									</div>
-									<div class="item-content">
-										<p>Research, design, and deploy practical deep learning & NLP solutions for a relevance search product over relational databases, especially in the business domain. (Details omitted due to non-disclosure agreement) </p>
-										<p>Continue working on a relevant research topic in the natural language generation area after the internship as a side project.</p>
-									</div>
-								</div><!--//item-->
+  var BIO = "Deren Lei (\u96f7\u5fb7\u4ec1) \u2014 Research Engineer @ Meta MSL.\n\nMy interests specifically lie in the area of natural language\nprocessing & deep learning. Particularly interested in teaching\nLLMs to reason and act under uncertainties in real world scenarios.";
 
-								<div class="item mb-3">
-									<div class="item-heading row align-items-center mb-2">
-										<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">NLP Research Assistant</h4>
-										<div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-left text-md-right">June 2019 – Present</div>
-										<div class="item-meta col-12 col-md-6 col-lg-6 text-muted text-left"> <a href="http://inklab.usc.edu/"> USC INK Lab </a> | Advisor: <a href="http://ink-ron.usc.edu/xiangren/"> Prof. Xiang Ren </a> </div>
-									</div>
-									<div class="item-content">
-										<p>Focusing on neural symbolic reasoning with an emphasis on natural language and knowledge graph applications:</p>
-										<ul class="resume-list">
-											<li>Leveraged symbolic rules with collaborative RL agents for knowledge graph reasoning. (In Submission)</li>
-											<li>Using self-supervised learning to learn relations in knowledge graph and augment existing embedding approach. (In submission)</li>
-										</ul>
-									</div>
-								</div><!--//item-->
+  var PUBS = [
+    ["Beyond Reasoning Gains: Mitigating General Capabilities Forgetting in Large Reasoning Models", "arXiv 2025"],
+    ["FactCG: Enhancing Fact Checkers with Graph-Based Multi-Hop Data", "NAACL 2025"],
+    ["SLM Meets LLM: Balancing Latency, Interpretability and Consistency in Hallucination Detection", "arXiv 2024"],
+    ["InvisMark: Invisible and Robust Watermarking for AI-generated Image Provenance", "WACV 2024"],
+    ["Chain of NLI for Reducing Large Language Model Ungrounded Hallucinations", "arXiv 2023"],
+    ["Extract, Denoise and Enforce: Evaluating and Improving Concept Preservation for Text-to-Text Generation", "EMNLP 2021"],
+    ["Learning Collaborative Agents with Rule Guidance for Knowledge Graph Reasoning", "EMNLP 2020"],
+    ["Learning to Reason in Round-based Games", "AIIDE 2020"],
+    ["Deep RL with Distributional Semantic Rewards for Abstractive Summarization", "EMNLP-IJCNLP 2019"],
+    ["Imposing Label-Relational Inductive Bias for Extremely Fine-Grained Entity Typing", "NAACL 2019"],
+    ["Implicit Regularization of SGD in NLP: Observations and Implications", "arXiv 2018"]
+  ];
 
-								<div class="item mb-3">
-									<div class="item-heading row align-items-center mb-2">
-										<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">NLP Research Assistant</h4>
-										<div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-left text-md-right">Oct 2017 – June 2019</div>
-										<div class="item-meta col-12 col-md-6 col-lg-7 text-muted text-left"> <a href="http://nlp.cs.ucsb.edu/"> UCSB NLP Lab </a> | Advisor: <a href="https://sites.cs.ucsb.edu/~william/"> Prof. William Wang </a> </div>
+  var EXP = [
+    ["Meta", "Research Engineer \u2014 GenAI / Llama post-training", "Apr 2025 \u2013 Present"],
+    ["Microsoft", "Senior Applied Scientist \u2014 Azure Cognitive Services, Responsible AI", "May 2023 \u2013 Apr 2025"],
+    ["Microsoft", "Applied Scientist \u2014 Azure Cognitive Services, Knowledge", "Jun 2021 \u2013 May 2023"],
+    ["Microsoft", "Applied Scientist Intern", "May 2020 \u2013 Aug 2020"],
+    ["Amazon", "SDE Intern", "Summer 2017"]
+  ];
 
-									</div>
-									<div class="item-content">
-										<p>Spend majority of the time on NLP relevant research starting from 3rd year. Mostly interested in natural language generation:</p>
-										<ul class="resume-list">
-											<li>Proposed new reinforcement learning approach with distributional semantics for abstract summarization.</li>
-											<li>Assisted other researchers to improve fine-grained entity typing performance from internal inconsistency issues.</li>
-											<li>Expanded the CNN/Dailymail dataset with related images and videos for new multi-model tasks.</li>
-											<li>Observed and analyzed the implicit regularization of vanilla stochastic gradient descent in three common NLP tasks.</li>
-										</ul>
-									</div>
-								</div><!--//item-->
+  var EDU = [
+    ["University of Southern California", "M.S. Computer Science", "2019 \u2013 2021"],
+    ["UC Santa Barbara", "B.S. Computer Science", "2015 \u2013 2019"]
+  ];
 
-								<div class="item">
-									<div class="item-heading row align-items-center mb-2">
-										<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Software Development Engineer Intern</h4>
-										<div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-left text-md-right">Summer 2017</div>
-										<div class="item-meta col-12 col-md-6 col-lg-7 text-muted text-left">Amazon.cn</div>
-									</div>
-									<div class="item-content">
-										<!-- <p>Role description goes here ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus. </p> -->
-										<ul class="resume-list">
-											<li>Created an internal tool helping developers to do automatic product page status checking.</li>
-											<li>Did web crawling and data preprocessing for softline product recommendation deep learning algorithm</li>
-										</ul>
-									</div>
-								</div><!--//item-->
+  function fmtPubs() {
+    var lines = ["\n  \u250c\u2500 PUBLICATIONS \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510", "  \u2502"];
+    for (var i = 0; i < PUBS.length; i++) {
+      lines.push("  \u2502  [" + (i+1) + "]  " + PUBS[i][0]);
+      lines.push("  \u2502       " + PUBS[i][1]);
+      if (i < PUBS.length - 1) lines.push("  \u2502");
+    }
+    lines.push("  \u2502");
+    lines.push("  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518");
+    lines.push("\n  Full list \u2192 scholar.google.com/citations?user=Qir1J5oAAAAJ");
+    return lines.join("\n");
+  }
 
+  function fmtExp() {
+    var lines = ["\n  \u250c\u2500 EXPERIENCE \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510", "  \u2502"];
+    for (var i = 0; i < EXP.length; i++) {
+      lines.push("  \u2502  " + EXP[i][0]);
+      lines.push("  \u2502  " + EXP[i][1]);
+      lines.push("  \u2502  " + EXP[i][2]);
+      if (i < EXP.length - 1) lines.push("  \u2502  \u2500\u2500\u2500");
+    }
+    lines.push("  \u2502");
+    lines.push("  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518");
+    return lines.join("\n");
+  }
 
-							</section><!--//work-section-->
+  function fmtEdu() {
+    var lines = ["\n  \u250c\u2500 EDUCATION \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510", "  \u2502"];
+    for (var i = 0; i < EDU.length; i++) {
+      lines.push("  \u2502  " + EDU[i][0]);
+      lines.push("  \u2502  " + EDU[i][1] + "  \u2022  " + EDU[i][2]);
+      if (i < EDU.length - 1) lines.push("  \u2502");
+    }
+    lines.push("  \u2502");
+    lines.push("  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518");
+    return lines.join("\n");
+  }
 
-							<section class="project-section py-3">
-								<h3 class="text-uppercase resume-section-heading mb-4">Publications</h3>
-								<div class="item mb-3">
-									<!-- <div class="item-heading row align-items-center mb-2">
-										<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Project Lorem Ipsum</h4>
-										<div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-left text-md-right">Open Source</div>
+  function fmtHelp() {
+    return [
+      "\n  \u250c\u2500 COMMANDS \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510",
+      "  \u2502",
+      "  \u2502  about          Who is Deren?",
+      "  \u2502  publications   Research papers",
+      "  \u2502  experience     Work history",
+      "  \u2502  education      Academic background",
+      "  \u2502  contact        Get in touch",
+      "  \u2502  clear          Clear terminal",
+      "  \u2502  help           Show this message",
+      "  \u2502",
+      "  \u2502  Or just ask a question in plain English!",
+      "  \u2502",
+      "  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518"
+    ].join("\n");
+  }
 
-									</div> -->
-									<div class="item-content">
-										<ul class="resume-list">
-											<li>
-												<b> "Self-Supervised Relation Learning for Knowledge Graph Reasoning" </b>  <br/>
-												<b> Deren Lei* </b>, Gangrong Jiang*, Kexuan Sun, Xiang Ren (* equal contribution) <br/><br/>
-											</li>
-											<li>
-												<b> "Learning Collaborative Agents with Rule Guidance for Knowledge Graph Reasoning" </b> (In submission) <br/>
-												<b> Deren Lei* </b>, Gangrong Jiang*, Xiaotao Gu, Kexuan Sun, Yuning Mao, Xiang Ren (* equal contribution) <br/>
-												<b> EMNLP 2020 </b>, short paper, <a href="https://arxiv.org/abs/2005.00571">[paper]</a>, <a href="https://github.com/derenlei/KG-RuleGuider">[code]</a> <br/><br/>
-											</li>
-											<li>
-												<b> "Learning to Reason in Round-based Games: Multi-task Sequence Generation for Purchasing Decision Making in First-person Shooters" </b> <br/>
-												<b> Deren Lei* </b>, Gangrong Jiang*, Beichen Li*, Yilei Zeng*, Emilio Ferrara, Michael Zyda (* equal contribution)<br/>
-												<b> AIIDE 2020 </b>, research track, <a href="https://ojs.aaai.org//index.php/AIIDE/article/view/7446">[paper]</a>, <a href="https://github.com/derenlei/CSGO_Econ_AI">[code]</a> <br/><br/>
-											</li>
-											<li>
-												<b> "Deep Reinforcement Learning with Distributional Semantic Rewards for Abstractive Summarization" </b> <br/>
-												<b> Deren Lei* </b>, Siyao Li*, Pengda Qin, William Yang Wang (* equal contribution) <br/>
-												<b> EMNLP-IJCNLP 2019 </b>, short paper, <a href="https://arxiv.org/abs/1909.00141">[paper]</a> <br/><br/>
-											</li>
-											<li>
-												<b> "Imposing Label-Relational Inductive Bias for Extremely Fine-Grained Entity Typing" </b> <br/>
-												Wenhan Xiong, Jiawei Wu, <b> Deren Lei </b>, Mo Yu, Shiyu Chang, Xiaoxiao Guo and William Yang Wang  <br/>
-												<b> NAACL-HLT 2019 </b>, long paper, <a href="https://arxiv.org/abs/1903.02591">[paper]</a> <br/><br/>
-											</li>
-											<li>
-												<b> "Implicit Regularization of Stochastic Gradient Descent in NLP: Observations and Implications" </b> <br/>
-												<b> Deren Lei </b>, Zichen Sun, Yijun Xiao, William Yang Wang   <br/>
-												<b>Technical Report </b>, long paper, <a href="https://arxiv.org/abs/1811.00659">[paper]</a>
-											</li>
-										</ul>
+  function fmtContact() {
+    return [
+      "\n  \u250c\u2500 CONTACT \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510",
+      "  \u2502",
+      "  \u2502  Email      derenlei@gmail.com",
+      "  \u2502  LinkedIn   linkedin.com/in/derenlei",
+      "  \u2502  GitHub     github.com/derenlei",
+      "  \u2502  Scholar    scholar.google.com",
+      "  \u2502",
+      "  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518"
+    ].join("\n");
+  }
 
+  function respond(input) {
+    var cmd = input.trim().toLowerCase();
+    if (!cmd) return null;
+    if (cmd === "clear") return "__CLEAR__";
+    if (cmd === "help" || cmd === "?") return fmtHelp();
+    if (cmd === "whoami" || cmd === "about" || cmd === "cat about.txt") return BIO;
+    if (cmd === "ls publications" || cmd === "publications" || cmd === "papers" || cmd === "pubs") return fmtPubs();
+    if (cmd === "ls experience" || cmd === "experience" || cmd === "work" || cmd === "jobs") return fmtExp();
+    if (cmd === "education" || cmd === "edu" || cmd === "ls education") return fmtEdu();
+    if (cmd === "contact" || cmd === "email") return fmtContact();
+    if (cmd.indexOf("paper") !== -1 || cmd.indexOf("publication") !== -1 || cmd.indexOf("research") !== -1) return fmtPubs();
+    if (cmd.indexOf("work") !== -1 || cmd.indexOf("meta") !== -1 || cmd.indexOf("job") !== -1 || cmd.indexOf("experience") !== -1) return fmtExp();
+    if (cmd.indexOf("school") !== -1 || cmd.indexOf("degree") !== -1 || cmd.indexOf("university") !== -1 || cmd.indexOf("usc") !== -1 || cmd.indexOf("ucsb") !== -1) return fmtEdu();
+    if (cmd.indexOf("nlp") !== -1 || cmd.indexOf("llm") !== -1 || cmd.indexOf("deep learning") !== -1 || cmd.indexOf("ai") !== -1 || cmd.indexOf("hallucination") !== -1) {
+      return "Deren is a Research Engineer at Meta MSL, focusing on NLP\nand deep learning. His research targets teaching LLMs to\nreason and act under uncertainty.\n\nRecent work includes hallucination detection (FactCG, Chain of NLI),\nAI watermarking (InvisMark), and LLM post-training.\n\nType 'publications' to see the full list.";
+    }
+    return null; // not a built-in command, use Gemini
+  }
 
-									</div>
-								</div>
-							</section>
+  // ── Gemini API ────────────────────────────────────────────
+  var GEMINI_KEY = 'AIzaSyBhSBtWoWFMi0WKyDlCsHmzeZdfgx4uPAc';
+  var GEMINI_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=' + GEMINI_KEY;
+  var SYSTEM_PROMPT = "You are Deren Lei's personal website assistant. Answer questions about Deren based on the following information. Be concise, friendly, and helpful. If asked something not covered below, say you don't have that information. Format responses as plain text suitable for a terminal — no markdown headers, no bullet symbols, no asterisks. Use short lines.\n\n## About\nResearch Engineer @ Meta MSL. Interests in NLP & deep learning. Particularly interested in teaching LLMs to reason and act under uncertainties in real world scenarios.\n\n## Experience\n- Meta — Research Engineer, Apr 2025 – Present (MetaAI/Llama/Avocado post-training for planning and agentic tool use)\n- Microsoft — Senior Applied Scientist, May 2023 – Apr 2025 (Azure Cognitive Services, Responsible AI — grounding & jailbreak detection)\n- Microsoft — Applied Scientist, Jun 2021 – May 2023 (Azure Cognitive Services, Knowledge — copilot services for GPT3.5/4)\n- Microsoft — Applied Scientist Intern, May 2020 – Aug 2020\n- Amazon — SDE Intern, Summer 2017\n\n## Education\n- University of Southern California — M.S. Computer Science, 2019–2021\n- University of California, Santa Barbara — B.S. Computer Science, 2015–2019\n\n## Publications\n1. Beyond Reasoning Gains: Mitigating General Capabilities Forgetting in Large Reasoning Models (2025, arXiv)\n2. FactCG: Enhancing Fact Checkers with Graph-Based Multi-Hop Data (2025, NAACL)\n3. SLM Meets LLM: Balancing Latency, Interpretability and Consistency in Hallucination Detection (2024, arXiv)\n4. InvisMark: Invisible and Robust Watermarking for AI-generated Image Provenance (2024, WACV)\n5. Chain of NLI for Reducing LLM Ungrounded Hallucinations (2023, arXiv)\n6. Extract, Denoise and Enforce: Retrieving Target Sequences for LLMs (2021, EMNLP)\n7. Multi-hop Inference for Question-driven Summarization (2020, EMNLP)\n8. Interactive Game Level Generation with Sequential Transfers (2020, AIIDE)\n9. Asking Effective and Diverse Questions (2019, arXiv)\n10. Multihop Complementary Attention for QA Matching (2019, EMNLP)\n11. Improving QA with External Knowledge (2019, NAACL)\n12. Event Representations with Tensor-based Compositions (2018, arXiv)\n\n## Links\n- GitHub: https://github.com/derenlei\n- LinkedIn: https://www.linkedin.com/in/derenlei/\n- Google Scholar: https://scholar.google.com/citations?user=Qir1J5oAAAAJ&hl=en\n- Email: derenlei@gmail.com";
+  var chatHistory = [];
 
-							<!-- <section class="project-section py-3">
-									<h3 class="text-uppercase resume-section-heading mb-4">Side Projects</h3>
-									<div class="item mb-3">
-										<div class="item-heading row align-items-center mb-2">
-											<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">CS</h4>
-											<div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-left text-md-right">Fall 2019, Fall 2020</div>
-											<div class="item-meta col-12 col-md-6 col-lg-6 text-muted text-left">  USC Viterbi School of Engineering</div>
-										</div>
-										<div class="item-content">
-											<p>Principles of Programming for Informatics (Graduate level).</p>
-											<ul class="resume-list">
-												<li>Using python and SQL for data processing, modeling, and analysis.</li>
-											</ul>
+  function askGemini(question, cb) {
+    chatHistory.push({ role: "user", parts: [{ text: question }] });
+    fetch(GEMINI_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        system_instruction: { parts: [{ text: SYSTEM_PROMPT }] },
+        contents: chatHistory
+      })
+    }).then(function(res) {
+      if (!res.ok) throw new Error("API error: " + res.status);
+      return res.json();
+    }).then(function(data) {
+      var reply = (data.candidates && data.candidates[0] && data.candidates[0].content && data.candidates[0].content.parts && data.candidates[0].content.parts[0] && data.candidates[0].content.parts[0].text) || "No response.";
+      chatHistory.push({ role: "model", parts: [{ text: reply }] });
+      cb(reply);
+    }).catch(function(e) {
+      chatHistory.pop();
+      cb("Error: " + e.message + ". Please try again.");
+    });
+  }
 
-											<p>Applied Machine Learning for Games (Graduate Level).</p>
-											<ul class="resume-list">
-												<li> Apply deep learning and reinforcement learning to build game AI.</li>
-												<li>I have also taken this course previously and my team's course project has been accepted by AIIDE-20 as a research track paper. It's my honor to work with my amazing collaborators!</li>
-											</ul>
-										</div>
-									</div>
-							</section> -->
+  function addPromptLine(cmd) {
+    var div = document.createElement("div");
+    var p = document.createElement("span");
+    p.className = "prompt-line";
+    p.textContent = "deren.lei ~ $ ";
+    var c = document.createElement("span");
+    c.className = "cmd-text";
+    c.textContent = cmd;
+    div.appendChild(p);
+    div.appendChild(c);
+    output.appendChild(div);
+  }
 
-							<section class="project-section py-3">
-									<h3 class="text-uppercase resume-section-heading mb-4">Teaching</h3>
-									<div class="item mb-3">
-										<div class="item-heading row align-items-center mb-2">
-											<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">USC Teaching Assistant</h4>
-											<div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-left text-md-right">Fall 2019, Fall 2020</div>
-											<div class="item-meta col-12 col-md-6 col-lg-6 text-muted text-left">  USC Viterbi School of Engineering</div>
-										</div>
-										<div class="item-content">
-											<p>Principles of Programming for Informatics (Graduate level).</p>
-											<ul class="resume-list">
-												<li>Using python and SQL for data processing, modeling, and analysis.</li>
-											</ul>
+  function typeOutput(text, cb) {
+    var div = document.createElement("div");
+    div.className = "output-text";
+    output.appendChild(div);
+    var lines = text.split("\n");
+    var li = 0;
+    function nextLine() {
+      if (li >= lines.length) {
+        if (cb) cb();
+        return;
+      }
+      if (li > 0) div.appendChild(document.createElement("br"));
+      var span = document.createElement("span");
+      span.textContent = lines[li];
+      div.appendChild(span);
+      li++;
+      scrollBottom();
+      setTimeout(nextLine, 22);
+    }
+    nextLine();
+  }
 
-											<p>Applied Machine Learning for Games (Graduate Level).</p>
-											<ul class="resume-list">
-												<li> Apply deep learning and reinforcement learning to build game AI.</li>
-												<li>I have also taken this course previously and my team's course project has been accepted by AIIDE-20 as a research track paper. It's my honor to work with my amazing collaborators!</li>
-											</ul>
-										</div>
-									</div><!--//item-->
-							</section>
+  function scrollBottom() {
+    var body = document.querySelector(".terminal-body");
+    body.scrollTop = body.scrollHeight;
+  }
 
-							<!--section class="project-section py-3">
-								<h3 class="text-uppercase resume-section-heading mb-4">Projects</h3>
-								<div class="item mb-3">
-									<div class="item-heading row align-items-center mb-2">
-										<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Project Lorem Ipsum</h4>
-										<div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-left text-md-right">Open Source</div>
+  function processCommand(cmd) {
+    addPromptLine(cmd);
+    var resp = respond(cmd);
+    if (resp === "__CLEAR__") {
+      while (output.firstChild) output.removeChild(output.firstChild);
+      return;
+    }
+    if (resp === null) {
+      // Not a built-in command — ask Gemini
+      inputRow.style.display = "none";
+      var thinkDiv = document.createElement("div");
+      thinkDiv.className = "output-text";
+      thinkDiv.textContent = "Thinking...";
+      output.appendChild(thinkDiv);
+      scrollBottom();
+      askGemini(cmd, function(reply) {
+        output.removeChild(thinkDiv);
+        typeOutput(reply, function() {
+          var spacer = document.createElement("div");
+          spacer.style.height = "0.75rem";
+          output.appendChild(spacer);
+          inputRow.style.display = "flex";
+          inputEl.focus();
+          scrollBottom();
+        });
+      });
+      return;
+    }
+    inputRow.style.display = "none";
+    typeOutput(resp, function() {
+      var spacer = document.createElement("div");
+      spacer.style.height = "0.75rem";
+      output.appendChild(spacer);
+      inputRow.style.display = "flex";
+      inputEl.focus();
+      scrollBottom();
+    });
+  }
 
-									</div>
-									<div class="item-content">
-										<p>You can use this section for your side projects. You can <a href="#" class="theme-link">provide a project link here</a> as well. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+  function bootSequence() {
+    var lines = [
+      "Welcome to deren.lei \u2014 interactive terminal",
+      "",
+      "Hi! I'm Deren's AI assistant.",
+      "Ask me anything about his research, publications, or experience.",
+      "",
+      "Type 'help' for available commands.",
+      ""
+    ];
+    var container = document.createElement("div");
+    container.className = "output-text";
+    output.appendChild(container);
+    var i = 0;
+    function next() {
+      if (i >= lines.length) {
+        inputRow.style.display = "flex";
+        inputEl.focus();
+        scrollBottom();
+        return;
+      }
+      if (i > 0) container.appendChild(document.createElement("br"));
+      var sp = document.createElement("span");
+      if (i === 0) sp.style.color = "var(--accent)";
+      sp.textContent = lines[i];
+      container.appendChild(sp);
+      i++;
+      scrollBottom();
+      setTimeout(next, i === 1 ? 300 : 50);
+    }
+    inputRow.style.display = "none";
+    setTimeout(next, 400);
+  }
 
+  function initTheme() {
+    var btn = document.getElementById("theme-toggle");
+    var html = document.documentElement;
+    var saved = null;
+    try { saved = localStorage.getItem("theme"); } catch(e) {}
+    if (saved === "light") {
+      html.setAttribute("data-theme", "light");
+      btn.textContent = "> light_mode";
+    }
+    btn.addEventListener("click", function() {
+      var cur = html.getAttribute("data-theme");
+      if (cur === "light") {
+        html.removeAttribute("data-theme");
+        btn.textContent = "> dark_mode";
+        try { localStorage.setItem("theme", "dark"); } catch(e) {}
+      } else {
+        html.setAttribute("data-theme", "light");
+        btn.textContent = "> light_mode";
+        try { localStorage.setItem("theme", "light"); } catch(e) {}
+      }
+    });
+  }
 
-									</div>
-								</div>
-								<div class="item">
-									<div class="item-heading row align-items-center mb-2">
-										<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Project Sed Fringilla</h4>
-										<div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-left text-md-right">Open Source</div>
+  document.addEventListener("DOMContentLoaded", function() {
+    output = document.getElementById("terminal-output");
+    inputEl = document.getElementById("cmd-input");
+    inputRow = document.getElementById("input-row");
 
-									</div>
-									<div class="item-content">
-										<p>You can use this section for your side projects. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.</p>
+    initTheme();
+    bootSequence();
 
-									</div>
-								</div>
-							</section-->
+    inputEl.addEventListener("keydown", function(e) {
+      if (e.key === "Enter") {
+        var val = inputEl.value;
+        history.unshift(val);
+        histIdx = -1;
+        inputEl.value = "";
+        processCommand(val);
+      } else if (e.key === "ArrowUp") {
+        e.preventDefault();
+        if (histIdx < history.length - 1) { histIdx++; inputEl.value = history[histIdx]; }
+      } else if (e.key === "ArrowDown") {
+        e.preventDefault();
+        if (histIdx > 0) { histIdx--; inputEl.value = history[histIdx]; }
+        else if (histIdx === 0) { histIdx = -1; inputEl.value = ""; }
+      }
+    });
 
-
-						</div><!--//resume-main-->
-						<aside class="resume-aside col-12 col-lg-4 col-xl-3 px-lg-4 pb-lg-4">
-							<section class="education-section py-3">
-								<h3 class="text-uppercase resume-section-heading mb-4">Education</h3>
-								<ul class="list-unstyled resume-education-list">
-									<li class="mb-3">
-										<div class="resume-degree font-weight-bold">MSc in Computer Science</div>
-										<div class="resume-degree-org text-muted">University of Southern California</div>
-										<div class="resume-degree-time text-muted">2019 - 2021</div>
-									</li>
-									<li>
-										<div class="resume-degree font-weight-bold">BSc in Computer Science</div>
-										<div class="resume-degree-org text-muted">UC Santa Barbara</div>
-										<div class="resume-degree-time text-muted">2015 - 2019</div>
-									</li>
-								</ul>
-							</section><!--//education-section-->
-
-							<section class="skills-section py-3">
-								<h3 class="text-uppercase resume-section-heading mb-4">Skills</h3>
-								<div class="item">
-									<h4 class="item-title">Technical</h4>
-									<ul class="list-unstyled resume-skills-list">
-										<li class="mb-2">Python/Java/C++</li>
-										<li class="mb-2">Scala/Functional programming<li>
-										<li class="mb-2">MATLAB/R/Numpy<li>
-											<li class="mb-2">Tensorflow/PyTorch</li>
-											<li class="mb-2">Keras/Sklearn</li>
-											<li class="mb-2">Android/Unity</li>
-										</ul>
-									</div><!--//item-->
-									<!-- <div class="item">
-										<h4 class="item-title">Professional</h4>
-										<ul class="list-unstyled resume-skills-list">
-											<li class="mb-2">Effective communication</li>
-											<li class="mb-2">Team player<li>
-												<li class="mb-2">Strong problem solver</li>
-												<li>Good time management</li>
-											</ul>
-										</div--><!--//item-->
-									</section><!--//skills-section-->
-
-									<section class="education-section py-3">
-										<h3 class="text-uppercase resume-section-heading mb-4">Awards</h3>
-										<ul class="list-unstyled resume-awards-list">
-											<li class="mb-3">
-												<div class="font-weight-bold">UCSB Honors Scholar</div>
-												<div class="text-muted">UC Santa Barbara (2015-2019)</div>
-											</li>
-											<li>
-												<div class="font-weight-bold">Race On self-driving car competition (4/42)</div>
-												<div class="text-muted">University of Southern California (2019)</div>
-											</li>
-										</ul>
-									</section><!--//education-section-->
-									<section class="skills-section py-3">
-										<h3 class="text-uppercase resume-section-heading mb-4">Interests</h3>
-										<ul class="list-unstyled resume-interests-list mb-0">
-											<li class="mb-2">Workout</li>
-											<li class="mb-2">Soccer</li>
-											<li class="mb-2">Photography</li>
-											<li>Travelling</li>
-										</ul>
-									</section><!--//certificates-section-->
-
-								</aside><!--//resume-aside-->
-							</div><!--//row-->
-						</div><!--//resume-body-->
-						<hr>
-						<div class="resume-footer text-center">
-							<ul class="resume-social-list list-inline mx-auto mb-0 d-inline-block text-muted">
-								<!-- <li class="list-inline-item mb-lg-0 mr-3"><a class="resume-link" href="#"><i class="fab fa-github-square fa-2x mr-2" data-fa-transform="down-4"></i><span class="d-none d-lg-inline-block text-muted">github.com/username</span></a></li> -->
-								<li class="list-inline-item mb-lg-0 mr-3"><a class="resume-link" href="linkedin.com/in/derenlei"><i class="fab fa-linkedin fa-2x mr-2" data-fa-transform="down-4"></i><span class="d-none d-lg-inline-block text-muted">linkedin.com/in/derenlei</span></a></li>
-								<li class="list-inline-item mb-lg-0 mr-3"><a class="resume-link" href="https://scholar.google.com/citations?user=Qir1J5oAAAAJ&hl=en"><i class="fab fa-google fa-2x mr-2" data-fa-transform="down-4"></i><span class="d-none d-lg-inline-block text-muted">Google Scholar</span></a></li>
-								<!-- <li class="list-inline-item mb-lg-0 mr-lg-3"><a class="resume-link" href="#"><i class="fab fa-twitter-square fa-2x mr-2" data-fa-transform="down-4"></i><span class="d-none d-lg-inline-block text-muted">@twittername</span></a></li> -->
-							</ul>
-						</div><!--//resume-footer-->
-					</article>
-
-				</div><!--//container-->
-
-				<footer class="footer text-center py-4">
-					<!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can buy the commercial license via our website: themes.3rdwavemedia.com */-->
-					<small class="copyright text-muted">Designed with <i class="fas fa-heart"></i> by <a class="theme-link" href="http://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a></small>
-					<script type="text/javascript" id="clustrmaps" src="//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=269&t=n&d=PxPPALI9vEO_uU6zPkfEEIehs2PmTHlTRJuC8s8PdGY&cmo=ff5353&cmn=ff5353"></script>
-				</footer>
-
-			</div><!--//main-wrapper-->
-
-
+    document.querySelector(".terminal-body").addEventListener("click", function() {
+      inputEl.focus();
+    });
+  });
+})();
+</script>
 </body>
 </html>
