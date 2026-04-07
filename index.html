@@ -364,18 +364,12 @@ a:hover { text-decoration: underline; }
     var cmd = input.trim().toLowerCase();
     if (!cmd) return null;
     if (cmd === "clear") return "__CLEAR__";
-    if (cmd === "help" || cmd === "?") return fmtHelp();
+    if (cmd === "help" || cmd === "?" || cmd === "ls") return fmtHelp();
     if (cmd === "whoami" || cmd === "about" || cmd === "cat about.txt") return BIO;
-    if (cmd === "ls publications" || cmd === "publications" || cmd === "papers" || cmd === "pubs") return fmtPubs();
-    if (cmd === "ls experience" || cmd === "experience" || cmd === "work" || cmd === "jobs") return fmtExp();
-    if (cmd === "education" || cmd === "edu" || cmd === "ls education") return fmtEdu();
+    if (cmd === "publications" || cmd === "papers" || cmd === "pubs") return fmtPubs();
+    if (cmd === "experience" || cmd === "work" || cmd === "jobs") return fmtExp();
+    if (cmd === "education" || cmd === "edu") return fmtEdu();
     if (cmd === "contact" || cmd === "email") return fmtContact();
-    if (cmd.indexOf("paper") !== -1 || cmd.indexOf("publication") !== -1 || cmd.indexOf("research") !== -1) return fmtPubs();
-    if (cmd.indexOf("work") !== -1 || cmd.indexOf("meta") !== -1 || cmd.indexOf("job") !== -1 || cmd.indexOf("experience") !== -1) return fmtExp();
-    if (cmd.indexOf("school") !== -1 || cmd.indexOf("degree") !== -1 || cmd.indexOf("university") !== -1 || cmd.indexOf("usc") !== -1 || cmd.indexOf("ucsb") !== -1) return fmtEdu();
-    if (cmd.indexOf("nlp") !== -1 || cmd.indexOf("llm") !== -1 || cmd.indexOf("deep learning") !== -1 || (/\bai\b/).test(cmd) || cmd.indexOf("hallucination") !== -1) {
-      return "Deren is a Research Engineer at Meta MSL, focusing on NLP\nand deep learning. His research targets teaching LLMs to\nreason and act under uncertainty.\n\nRecent work includes hallucination detection (FactCG, Chain of NLI),\nAI watermarking (InvisMark), and LLM post-training.\n\nType 'publications' to see the full list.";
-    }
     return null; // not a built-in command, use Gemini
   }
 
