@@ -381,50 +381,38 @@ a:hover { text-decoration: underline; }
 
   // ── Gemini API ────────────────────────────────────────────
   var GEMINI_KEY = 'AIzaSyBhSBtWoWFMi0WKyDlCsHmzeZdfgx4uPAc';
-  var GEMINI_MODELS = [
-    'gemini-2.0-flash',
-    'gemini-2.0-flash-lite',
-    'gemini-1.5-flash'
-  ];
-  var GEMINI_BASE = 'https://generativelanguage.googleapis.com/v1beta/models/';
+  var GEMINI_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-lite:generateContent?key=' + GEMINI_KEY;
   var SYSTEM_PROMPT = "You are Deren Lei's personal website assistant. Answer questions about Deren based on the following information. Be concise, friendly, and helpful. If asked something not covered below, say you don't have that information. Format responses as plain text suitable for a terminal — no markdown headers, no bullet symbols, no asterisks. Use short lines.\n\n## About\nResearch Engineer @ Meta MSL. Interests in NLP & deep learning. Particularly interested in teaching LLMs to reason and act under uncertainties in real world scenarios.\n\n## Experience\n- Meta — Research Engineer, Apr 2025 – Present (MetaAI/Llama/Avocado post-training for planning and agentic tool use)\n- Microsoft — Senior Applied Scientist, May 2023 – Apr 2025 (Azure Cognitive Services, Responsible AI — grounding & jailbreak detection)\n- Microsoft — Applied Scientist, Jun 2021 – May 2023 (Azure Cognitive Services, Knowledge — copilot services for GPT3.5/4)\n- Microsoft — Applied Scientist Intern, May 2020 – Aug 2020\n- Amazon — SDE Intern, Summer 2017\n\n## Education\n- University of Southern California — M.S. Computer Science, 2019–2021\n- University of California, Santa Barbara — B.S. Computer Science, 2015–2019\n\n## Publications\n1. Beyond Reasoning Gains: Mitigating General Capabilities Forgetting in Large Reasoning Models (2025, arXiv)\n2. FactCG: Enhancing Fact Checkers with Graph-Based Multi-Hop Data (2025, NAACL)\n3. SLM Meets LLM: Balancing Latency, Interpretability and Consistency in Hallucination Detection (2024, arXiv)\n4. InvisMark: Invisible and Robust Watermarking for AI-generated Image Provenance (2024, WACV)\n5. Chain of NLI for Reducing LLM Ungrounded Hallucinations (2023, arXiv)\n6. Extract, Denoise and Enforce: Retrieving Target Sequences for LLMs (2021, EMNLP)\n7. Multi-hop Inference for Question-driven Summarization (2020, EMNLP)\n8. Interactive Game Level Generation with Sequential Transfers (2020, AIIDE)\n9. Asking Effective and Diverse Questions (2019, arXiv)\n10. Multihop Complementary Attention for QA Matching (2019, EMNLP)\n11. Improving QA with External Knowledge (2019, NAACL)\n12. Event Representations with Tensor-based Compositions (2018, arXiv)\n\n## Links\n- GitHub: https://github.com/derenlei\n- LinkedIn: https://www.linkedin.com/in/derenlei/\n- Google Scholar: https://scholar.google.com/citations?user=Qir1J5oAAAAJ&hl=en\n- Email: derenlei@gmail.com";
   var chatHistory = [];
 
-  function tryGemini(question, modelIdx, cb) {
-    if (modelIdx >= GEMINI_MODELS.length) {
-      cb("Assistant is temporarily unavailable. Try built-in commands like 'help', 'about', 'publications', or 'experience'.");
-      return;
-    }
-    var url = GEMINI_BASE + GEMINI_MODELS[modelIdx] + ':generateContent?key=' + GEMINI_KEY;
-    fetch(url, {
+  function askGemini(question, cb) {
+    chatHistory.push({ role: "user", parts: [{ text: question }] });
+    fetch(GEMINI_URL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         system_instruction: { parts: [{ text: SYSTEM_PROMPT }] },
-        contents: chatHistory.concat([{ role: "user", parts: [{ text: question }] }])
+        contents: chatHistory
       })
     }).then(function(res) {
-      if (res.status === 429) {
-        // Rate limited on this model, try next
-        tryGemini(question, modelIdx + 1, cb);
-        return;
+      if (!res.ok) {
+        return res.json().then(function(err) {
+          if (res.status === 429) {
+            throw new Error("Assistant is busy. Try built-in commands: help, about, publications, experience");
+          }
+          throw new Error("API error: " + res.status);
+        });
       }
-      if (!res.ok) throw new Error("API error: " + res.status);
       return res.json();
     }).then(function(data) {
-      if (!data) return; // handled by 429 fallback
       var reply = (data.candidates && data.candidates[0] && data.candidates[0].content && data.candidates[0].content.parts && data.candidates[0].content.parts[0] && data.candidates[0].content.parts[0].text) || "No response.";
-      chatHistory.push({ role: "user", parts: [{ text: question }] });
       chatHistory.push({ role: "model", parts: [{ text: reply }] });
       cb(reply);
     }).catch(function(e) {
-      // Network or other error, try next model
-      tryGemini(question, modelIdx + 1, cb);
+      chatHistory.pop();
+      cb(e.message);
     });
   }
-
-  function askGemini(question, cb) {
-    tryGemini(question, 0, cb);
   }
 
   function addPromptLine(cmd) {
